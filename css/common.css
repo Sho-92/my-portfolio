@@ -1,0 +1,85 @@
+
+/* ヘッダーの固定 */
+header {
+  position: fixed;
+  background-color: #dcdcdc;
+  color: #2d3748; /* text */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  padding: 1rem;
+  z-index: 10; /* 重なり順を制御 */
+}
+
+/* 画面全体の高さを確保し、スクロールの調整 */
+body {
+  background-color: #dcdcdc;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* メインコンテンツの調整 */
+main {
+  background-color: #dcdcdc;
+  height: calc(100vh - 9rem); /* 余白を考慮した高さに調整 */
+  margin-top: 6rem; /* ヘッダーの高さ分の余白 */
+  margin-bottom: 3rem; /* フッターの高さ分の余白 */
+  overflow-y: auto;
+}
+
+/* フッターの固定 */
+footer {
+  position: fixed;
+  background-color: #dcdcdc;
+  color: #2d3748; /* text */
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  padding: 1rem;
+  z-index: 10; /* 重なり順を制御 */
+}
+
+
+
+h1 {
+  font-family:'Lora', serif;
+}
+
+h2 {
+  font-family: 'Lora', sans-serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* 英語のコンテンツは初期状態で表示 */
+.content.en {
+  display: block; /* 初期状態で表示 */
+  transition: opacity 0.5s ease; /* 遷移を追加 */
+  opacity: 1; /* 初期状態は不透明 */
+}
+
+/* 日本語のコンテンツは初期状態で非表示 */
+.content.ja {
+  display: none; /* 初期状態で非表示 */
+  transition: opacity 0.5s ease; /* 遷移を追加 */
+  opacity: 0; /* 初期状態は透明 */
+}
+
+/* 英語のコンテンツが表示される時 */
+.content.en:not([style*="display: none"]) {
+  opacity: 1; /* 表示状態の透明度を1に */
+}
+
+/* 日本語のコンテンツが表示される時 */
+.content.ja:not([style*="display: none"]) {
+  display: block; /* 表示状態にする */
+  opacity: 1; /* 表示状態の透明度を1に */
+}

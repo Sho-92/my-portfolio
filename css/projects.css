@@ -1,0 +1,22 @@
+.content section { 
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+/* カスタムCSSが必要な場合の例 */
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /* 画像間の間隔 */
+  margin-top: 1rem;
+}
+
+.project-item {
+  border: none;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.project-item img {
+  max-width: 100%;
+  height: auto;
+}

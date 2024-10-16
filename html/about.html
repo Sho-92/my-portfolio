@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/styles.css" rel="stylesheet"> <!-- Tailwind CSSのスタイル -->
+    <link href="../css/common.css" rel="stylesheet"> <!-- 共通スタイル -->
+    <link href="../css/about.css" rel="stylesheet"> <!-- indexページ固有のスタイル -->
+    <title>Portfolio</title>
+</head>
+<body>
+    <header class="p-4">
+        <h1 class="text-3xl font-bold">My Portfolio</h1>
+        <nav class="flex justify-between items-center">
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="projects.html" class="hover:underline">Projects</a></li>
+                <li><a href="about.html" class="hover:underline">About</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            </ul>
+            <div>
+                <button onclick="switchLanguage('en')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to English">English</button>
+                <button onclick="switchLanguage('ja')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to Japanese">日本語</button>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="p-0">
+        <div class="content en">
+              
+            <section id="about-en" class="p-4" style="min-height: 50vh; background-color: rgba(0, 0, 0, 0.3);">
+                <h2 class="text-2xl font-bold">About Me</h2>
+                <img src="../images/portrait.png" alt="portrait" class="rounded-image">
+              
+                <p>Learn more about my background and skills.</p>
+                <a href="about.html" class="text-blue-500 hover:underline">See More</a>    
+            </section>
+    
+        </div>
+            
+        <div class="content ja" style="display: none;">        
+            <section id="about-js" class="p-4" style="min-height: 30vh; background-color: rgba(0, 0, 0, 0.3);">
+                <h2 class="text-2xl font-bold">自己紹介</h2>
+                <p>私のバックグラウンドやスキルについて。</p>
+                <a href="about.html" class="text-blue-500 hover:underline">詳細はこちら</a>    
+            </section>
+    
+        </div>
+        
+    </main>
+    
+    <footer class="p-4">
+        <p>&copy; 2024 SHO </p>
+    </footer>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

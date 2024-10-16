@@ -1,0 +1,10 @@
+.content section { 
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.rounded-image {
+  width: 150px; /* 好みのサイズに設定 */
+  height: 150px; /* 好みのサイズに設定 */
+  object-fit: cover; /* アスペクト比を保ちながら切り抜く */
+  border-radius: 100%; /* 円形にする */
+}

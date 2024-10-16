@@ -1,0 +1,132 @@
+html, body {
+  scroll-behavior: smooth; /* スムーズスクロールを有効に */
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* セクションを縦に並べる */
+  scroll-snap-type: y mandatory; /* 縦方向のスナップを有効に */
+}
+
+.content section { 
+  scroll-snap-align: start; /* 各セクションが先頭に揃う */
+  height: calc(100vh - 9rem); /* 各セクションの高さを100vhから9rem引いたものに設定 */
+  background-color: rgba(255, 255, 255, 0.8); /* 背景に透過効果を設定 */
+  backdrop-filter: blur(10px); /* ぼかし効果を追加（オプション） */
+  padding: 2rem;
+  margin: 0 auto;
+  flex-shrink: 0; /* 高さが縮まないように設定 */
+}
+
+
+/* 共通の背景スタイル */
+.bg-shared {
+  background: url('../images/background-index.jpg') no-repeat center center/cover; /* 背景画像を設定 */
+  background-attachment: fixed; /* スクロール時に背景が固定される */
+  background-size: cover; /* 画像をカバーさせる */
+}
+
+
+/* Heroセクションの固定 */
+.hero-section {
+  position: relative;
+  height: calc(100vh - 9rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* h1のスタイル */
+.hero-section h2 {
+  font-size: clamp(2rem, 8rem, 6rem); /* 最小2rem、最大6rem、ビューポート幅に応じて調整 */
+  color: transparent;
+  -webkit-text-stroke: 1px #fff; /* テキストの外枠の太さと色を設定 */
+  fill: transparent; /* テキストの中身を透明にする */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0;
+}
+
+/* Heroセクションの中のオーバーレイ */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明のオーバーレイ */
+  z-index: 1;
+}
+
+/* 各セクションに共通の背景クラスを適用 */
+#projects-en, #about-en, #contact-en {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 9rem);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* カスタムCSSが必要な場合の例 */
+.project-gallery {
+  display: flex; /* フレックスボックスを使用して左右に並べる */
+  flex-direction: column; /* 縦に並べる */
+  gap: 1rem; /* カテゴリー間の間隔 */
+  width: 100%; /* ギャラリーの全幅を使用 */
+}
+
+.project-category {
+  flex: 1; /* 左右均等の幅を設定 */
+  max-width: 100%; /* 各ボックスの最大幅を設定 */
+  max-height: 400px; /* 最大高さを設定 */
+  border-bottom: 2px solid #ccc; /* 下線を追加 */
+  box-sizing: border-box; /* パディングを含めた幅調整 */
+  background-color: transparent; /* 背景を透明にする */
+  padding: 0; /* パディングを削除 */
+}
+
+.project-category h2 {
+  margin-bottom: 1rem; /* 見出しの下部余白 */
+  color: #2d3748; /* 見出しの文字色 */
+}
+
+.project-items-container {
+  display: flex; /* 横並びにする */
+  overflow-x: auto; /* 横スクロールを有効にする */
+  white-space: nowrap; /* アイテムが横並びになるように設定 */
+  width: 100%; /* コンテナの幅を100%に設定 */
+}
+
+.project-item {
+  flex: 0 0 auto; /* 各アイテムの幅を自動調整 */
+  width: calc(33.33% - 1rem); /* アイテムの幅を3つに分け、間隔を考慮 */
+  margin-right: 1rem; /* アイテム間の間隔 */
+  text-align: center;
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦に並べる */
+  align-items: center; /* アイテムを中央揃え */
+}
+
+/* 3つ目のアイテムの右側のマージンを削除 */
+.project-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.rounded-image {
+  width: 100px; /* 好みのサイズに設定 */
+  height: 100px; /* 好みのサイズに設定 */
+  object-fit: cover; /* アスペクト比を保ちながら切り抜く */
+  border-radius: 100%; /* 円形にする */
+  margin-bottom: 0.5rem; /* テキストとの間隔を追加（オプション） */
+}
+
+.custom-heading {
+  font-size: clamp(2rem, 6rem, 6rem); /* 最小2rem、最大6rem、ビューポート幅に応じて調整 */
+  color: #fff; /* テキストカラーを設定 */
+  text-transform: uppercase; /* テキストを大文字に変換 */
+  letter-spacing: 0.1em; /* 文字間隔を設定 */
+  margin-top: 1rem; /* 上の余白を設定 */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* テキストシャドウを追加 */
+}
+
