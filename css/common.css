@@ -1,6 +1,14 @@
+/* Reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* ヘッダーの固定 */
 header {
+  display: flex; /* ヘッダー全体をフレックスコンテナに */
+  align-items: center; /* 垂直方向の中央揃え */
   position: fixed;
   background-color: #dcdcdc;
   color: #2d3748; /* text */
@@ -8,13 +16,50 @@ header {
   left: 0;
   right: 0;
   height: 6rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   z-index: 10; /* 重なり順を制御 */
+  border-bottom: solid 1px #2d3748;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
+header h1 {
+  margin: 0; /* デフォルトのマージンをリセット */
+  flex: 0 1 auto; /* 固定幅を設定するためのフレックスプロパティ */
+}
+
+nav {
+  display: flex;
+  flex: 1; /* ナビゲーションがヘッダー全体の幅を占める */
+  justify-content: center; /* 全体を中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  text-align: center;
+}
+
+/* ナビゲーションメニュー */
+nav ul {
+  display: flex;
+  justify-content: center; /* 横方向中央揃え */
+  align-items: center; /* 垂直中央揃え */
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+  padding: 0;
+  margin: 0;
+  gap: 0rem; /* 各アイテム間のスペース */
+  flex: 1; /* ulにスペースを与える */
+}
+
+
+/* 言語切り替えボタン */
+nav div {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* ボタンを右に配置 */
+  gap: 0.5rem; /* ボタン間のスペース */
+}
+
 
 /* 画面全体の高さを確保し、スクロールの調整 */
 body {
-  background-color: #dcdcdc;
+  background: linear-gradient(to bottom, #dcdcdc, #b0b0b0);
   margin: 0;
   padding: 0;
 }
@@ -22,7 +67,6 @@ body {
 
 /* メインコンテンツの調整 */
 main {
-  background-color: #dcdcdc;
   height: calc(100vh - 9rem); /* 余白を考慮した高さに調整 */
   margin-top: 6rem; /* ヘッダーの高さ分の余白 */
   margin-bottom: 3rem; /* フッターの高さ分の余白 */
@@ -32,7 +76,7 @@ main {
 /* フッターの固定 */
 footer {
   position: fixed;
-  background-color: #dcdcdc;
+  background-color: #b0b0b0;
   color: #2d3748; /* text */
   text-align: center;
   bottom: 0;
@@ -41,22 +85,27 @@ footer {
   height: 3rem;
   padding: 1rem;
   z-index: 10; /* 重なり順を制御 */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
 }
-
 
 
 h1 {
   font-family:'Lora', serif;
+  color: #2d3748;
 }
 
 h2 {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lora', serif;
+  color: #2d3748;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 p {
   font-family: 'Montserrat', sans-serif;
 }
-
 
 
 /* 英語のコンテンツは初期状態で表示 */
@@ -82,4 +131,80 @@ p {
 .content.ja:not([style*="display: none"]) {
   display: block; /* 表示状態にする */
   opacity: 1; /* 表示状態の透明度を1に */
+}
+
+
+/* カスタムボタンのスタイル */
+.custom-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #dcdcdc;/*ボタン色*/
+  color: #6a6e7f;/*ボタン色より暗く*/
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 2px #2d3748;
+  border-right: solid 2px #2d3748;
+  border-radius: 3px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.custom-button:active {
+  -webkit-transform: translate(2px, 2px);
+  transform: translate(2px, 2px);
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  border-right: none;
+}
+
+/* 初期状態が分かりやすいようにホバー効果を追加 */
+.custom-button:hover {
+  background: linear-gradient(135deg, #e0e0e0, #c0c0c0); /* ホバー時の背景色 */
+  color: #2d3748; /* ホバー時のテキスト色 */
+}
+
+
+
+.nav-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #dcdcdc;/*ボタン色*/
+  color: #6a6e7f;/*ボタン色より暗く*/
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 2px #2d3748;
+  border-right: solid 2px #2d3748;
+  border-radius: 3px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.nav-button.current {
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8); /* 現在のページのリンクの背景色 */
+  color: #2d3748; /* 現在のページのリンクのテキスト色 */
+  border-bottom: none;
+  border-right: none;
+}
+
+.nav-button:active {
+  -webkit-transform: translate(2px, 2px);
+  transform: translate(2px, 2px);
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  border-right: none;
+}
+
+.nav-button:focus { 
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  color: #2d3748;
+  border-bottom: none; /* フォーカス時のボーダー色 */
+  border-right: none; /* フォーカス時のボーダー色 */
+} 
+
+/* 初期状態が分かりやすいようにホバー効果を追加 */
+.nav-button:hover {
+  background: linear-gradient(135deg, #e0e0e0, #c0c0c0); /* ホバー時の背景色 */
+  color: #2d3748; /* ホバー時のテキスト色 */
 }

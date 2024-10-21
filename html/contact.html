@@ -7,66 +7,83 @@
   <link href="../dist/styles.css" rel="stylesheet"> <!-- Tailwind CSSのスタイル -->
   <link href="../css/common.css" rel="stylesheet"> <!-- 共通スタイル -->
   <link href="../css/contact.css" rel="stylesheet"> <!-- indexページ固有のスタイル -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat&family=Lora&display=swap" rel="stylesheet">
+
   <title>Portfolio</title>
 </head>
 
 <body>
   <header class="p-4">
-    <h1 class="text-3xl font-bold">My Portfolio</h1>
-    <nav class="flex justify-between items-center">
-      <ul class="flex space-x-4">
-        <li><a href="index.html" class="hover:underline">Home</a></li>
-        <li><a href="projects.html" class="hover:underline">Projects</a></li>
-        <li><a href="about.html" class="hover:underline">About</a></li>
-        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+    <h1 class="text-3xl font-bold">SHO's Portfolio</h1>
+    <nav>
+      <ul>
+          <li><a href="index.html" class="nav-button">Home</a></li>
+          <li><a href="projects.html" class="nav-button">Projects</a></li>
+          <li><a href="about.html" class="nav-button">About</a></li>
+          <li><a href="contact.html" class="nav-button current">Contact</a></li>
       </ul>
       <div>
-        <button onclick="switchLanguage('en')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200"
-          aria-label="Switch to English">English</button>
-        <button onclick="switchLanguage('ja')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200"
-          aria-label="Switch to Japanese">日本語</button>
+          <button onclick="switchLanguage('en')" class="custom-button" aria-label="Switch to English">English</button>
+          <button onclick="switchLanguage('ja')" class="custom-button" aria-label="Switch to Japanese">Japanese</button>
       </div>
     </nav>
   </header>
 
   <main class="p-0">
     <div class="content en">
+
       <div class="wrapper">
         <video autoplay loop muted class="wrapper__video">
           <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3.mp4">
         </video>
       </div>
-      <section id="contact-en" class="p-4" style="min-height: 30vh; background-color: rgba(0, 0, 0, 0.3);">
-        <h2 class="text-2xl font-bold">Contact</h2>
-        <form action="https://formspree.io/f/xanyydaa" method="POST">
-          <label>
-            Your email:
-            <input type="email" name="email">
-          </label>
-          <label>
-            Your message:
-            <textarea name="message"></textarea>
-          </label>
-          <!-- your other form fields go here -->
-          <button type="submit">Send</button>
-        </form>
-        <p>If you have any questions, feel free to contact me here.</p>
-        <a href="contact.html" class="text-blue-500 hover:underline">See More</a>
-      </section>
+
+
+
+        <section id="contact-en" class="contact-section">
+          <h2 class="text-4xl font-bold">Contact</h2>
+          <form action="https://formspree.io/f/xanyydaa" method="POST">
+            <label>
+              <input type="email" name="email" placeholder="Your email :">
+            </label>
+            <label>
+              <textarea name="message" placeholder="Please provide details about your inquiry or project."></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <p>If you have any questions, feel free to contact me here.</p>
+            <button type="submit" class="submit-button">Send</button>
+          </form>
+        </section>    
     </div>
 
     <div class="content ja" style="display: none;">
-      <section id="contact-js" class="p-4" style="min-height: 20vh; background-color: rgba(0, 0, 0, 0.3);">
-        <h2 class="text-2xl font-bold">コンタクト</h2>
-        <p>質問はこちらからどうぞ。</p>
-        <a href="contact.html" class="text-blue-500 hover:underline">質問はこちら</a>
+      <div class="wrapper">
+        <video autoplay loop muted class="wrapper__video">
+          <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3.mp4">
+        </video>
+      </div>
+
+      <section id="contact-js" class="contact-section">
+        <h2 class="text-4xl font-bold">Contact</h2>
+        <form action="https://formspree.io/f/xanyydaa" method="POST">
+          <label>
+            <input type="email" name="email" placeholder="あなたのメールアドレス：">
+          </label>
+          <label>
+            <textarea name="message" placeholder="ご質問やプロジェクトについての詳細をお知らせください。"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <p>ご質問がある場合は、こちらからお気軽にお問い合わせください。</p>
+          <button type="submit" class="submit-button">送信</button>
+        </form>
+
       </section>
     </div>
 
   </main>
 
   <footer class="p-4">
-    <p>&copy; 2024 SHO </p>
+    <p>&copy; 2024 SHO MAEKAWA </p>
   </footer>
   <script src="../js/scripts.js"></script>
 </body>

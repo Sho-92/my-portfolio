@@ -6,60 +6,163 @@
     <link href="../dist/styles.css" rel="stylesheet"> <!-- Tailwind CSSのスタイル -->
     <link href="../css/common.css" rel="stylesheet"> <!-- 共通スタイル -->
     <link href="../css/projects.css" rel="stylesheet"> <!-- indexページ固有のスタイル -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat&family=Lora&display=swap" rel="stylesheet">
+
     <title>Portfolio</title>
 </head>
 <body>
     <header class="p-4">
-        <h1 class="text-3xl font-bold">My Portfolio</h1>
-        <nav class="flex justify-between items-center">
-            <ul class="flex space-x-4">
-                <li><a href="index.html" class="hover:underline">Home</a></li>
-                <li><a href="projects.html" class="hover:underline">Projects</a></li>
-                <li><a href="about.html" class="hover:underline">About</a></li>
-                <li><a href="contact.html" class="hover:underline">Contact</a></li>
-            </ul>
-            <div>
-                <button onclick="switchLanguage('en')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to English">English</button>
-                <button onclick="switchLanguage('ja')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to Japanese">日本語</button>
-            </div>
+        <h1 class="text-3xl font-bold">SHO's Portfolio</h1>
+        <nav>
+          <ul>
+              <li><a href="index.html" class="nav-button">Home</a></li>
+              <li><a href="projects.html" class="nav-button current">Projects</a></li>
+              <li><a href="about.html" class="nav-button">About</a></li>
+              <li><a href="contact.html" class="nav-button">Contact</a></li>
+          </ul>
+          <div>
+              <button onclick="switchLanguage('en')" class="custom-button" aria-label="Switch to English">English</button>
+              <button onclick="switchLanguage('ja')" class="custom-button" aria-label="Switch to Japanese">Japanese</button>
+          </div>
         </nav>
     </header>
     
     <main class="p-0">
-        <div class="content en">
-            <section id="projects-en" class="p-4" style="min-height: 50vh; background-color: rgba(0, 0, 0, 0.3);">
-                <h2 class="text-2xl font-bold">Projects</h2>
-                <p>Here is an overview of the projects I have worked on.</p>
-            
-                <div class="project-gallery grid grid-cols-3 gap-4 mt-4">
-                    <div class="project-item">
-                        <img src="../images/mytrip.png" alt="Project 1" class="w-full h-auto">
-                        <p class="mt-2">Project 1 Description</p>
-                    </div>
-                    <div class="project-item">
-                        <img src="../images/background-index.jpg" alt="Project 2" class="w-full h-auto">
-                        <p class="mt-2">Project 2 Description</p>
-                    </div>
-                    <!-- 追加のプロジェクト -->
-                </div>
-                <a href="projects.html" class="text-blue-500 hover:underline">See More</a>    
 
+      <!-- 英語コンテンツ -->
+      <div class="content en">
+          <section id="projects-en" class="p-4">
+              <h2 class="text-4xl text-center font-bold">Projects</h2>
+              <div class="tab-switch mt-8">
+                <button onclick="switchTab('frontend')" class="tab-button">Front-End</button>
+                <button onclick="switchTab('backend')" class="tab-button">Back-End</button>
+              </div>
+      
+              <!-- フロントエンドプロジェクト -->
+              <div class="project-category-page frontend" style="display: block;">
+                <div class="project-gallery-wrapper">
+                  <h2 class="text-3xl font-bold">Front-End</h2>  
+                  <div class="project-gallery mt-4">
+                      <div class="project-item">
+                        <img src="../images/background-index.jpg" alt="Project 2">
+                        <h3 class="text-2xl font-bold">SHO's Portfolio</h3>
+                        <div class="project-detail">
+                          <p>This app is designed to simplify travel schedule management.
+                            It is allow users to manage their schedules, transportation, accommodation, and checklists, categorized by each trip.
+                            All the necessary travel management features are combined into one convenient platform.</p>
+                          <p>* Front-End : HTML5, Bootstrap5, Bootstrap Icons, FontAwesome6, FullCalendar, JavaScript<br>
+                            * Back-End : Laravel 11, SQLite<br>
+                            * API Integration : Google Maps API
+                          </p>
+                          <p>* GitHub Repository : <a href="https://github.com/Sho-92/MyTrip-app.git" class="text-blue-500 hover:underline">https://github.com/Sho-92/MyTrip-app.git</a></p>
+                          <p>* Preview the App : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="../images/mytrip.mp4">Watch Now</a></p>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- バックエンドプロジェクト -->
+              <div class="project-category-page backend" style="display: none;">
+                <div class="project-gallery-wrapper">
+                  <h2 class="text-3xl font-bold">Back-End</h2>  
+                  <div class="project-gallery mt-4">
+                      <div class="project-item">
+                        <a href="#" class="open-modal" data-video-src="../images/mytrip.mp4"><img src="../images/mytrip.png" alt="Project 1"></a>
+                        <h3 class="text-2xl font-bold">My Trip</h3>
+                        <div class="project-detail">
+                          <p>This app is designed to simplify travel schedule management.
+                            It is allow users to manage their schedules, transportation, accommodation, and checklists, categorized by each trip.
+                            All the necessary travel management features are combined into one convenient platform.</p>
+                          <p>* Front-End : HTML5, Bootstrap5, Bootstrap Icons, FontAwesome6, FullCalendar, JavaScript<br>
+                            * Back-End : Laravel 11, SQLite<br>
+                            * API Integration : Google Maps API
+                          </p>
+                          <p>* GitHub Repository : <a href="https://github.com/Sho-92/MyTrip-app.git" class="text-blue-500 hover:underline">https://github.com/Sho-92/MyTrip-app.git</a></p>
+                          <p>* Preview the App : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="../images/mytrip.mp4">Watch Now</a></p>
+                        </div>
+                      </div>   
+                    </div>
+                </div>                  
+              </div>
+          </section>
+      </div>
+
+      <!-- 日本語コンテンツ -->
+      <div class="content ja" style="display: none;">
+          <section id="projects-ja" class="p-4">
+            <h2 class="text-4xl text-center font-bold">Projects</h2>
+              <div class="tab-switch mt-8">
+                <button onclick="switchTab('frontend')" class="tab-button">フロントエンド</button>
+                <button onclick="switchTab('backend')" class="tab-button">バックエンド</button>
+              </div>
+      
+              <!-- フロントエンドプロジェクト -->
+              <div class="project-category-page frontend" style="display: block;">
+                <div class="project-gallery-wrapper">
+                  <h2 class="text-3xl font-bold">Front-End</h2>  
+                  <div class="project-gallery mt-4">
+                      <div class="project-item">
+                        <img src="../images/background-index.jpg" alt="Project 2">
+                        <h3 class="text-2xl font-bold">SHO's Portfolio</h3>
+                        <div class="project-detail">
+                          <p>This app is designed to simplify travel schedule management.
+                            It is allow users to manage their schedules, transportation, accommodation, and checklists, categorized by each trip.
+                            All the necessary travel management features are combined into one convenient platform.</p>
+                          <p>* Front-End : HTML5, Bootstrap5, Bootstrap Icons, FontAwesome6, FullCalendar, JavaScript<br>
+                            * Back-End : Laravel 11, SQLite<br>
+                            * API Integration : Google Maps API
+                          </p>
+                          <p>* GitHub Repository : <a href="https://github.com/Sho-92/MyTrip-app.git" class="text-blue-500 hover:underline">https://github.com/Sho-92/MyTrip-app.git</a></p>
+                          <p>* Preview the App : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="../images/mytrip.mp4">Watch Now</a></p>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- バックエンドプロジェクト -->
+              <div class="project-category-page backend" style="display: none;">
+                <div class="project-gallery-wrapper">
+                  <h2 class="text-3xl font-bold">Back-End</h2>  
+                  <div class="project-gallery mt-4">
+                      <div class="project-item">
+                        <a href="#" class="open-modal" data-video-src="../images/mytrip.mp4"><img src="../images/mytrip.png" alt="Project 1"></a>
+                        <h3 class="text-2xl font-bold">- My Trip -</h3>
+                        <div class="project-detail">
+                          <p>このアプリは、旅行スケジュール管理を簡素化するために設計されています。
+                            ユーザーが旅行ごとにスケジュール、交通手段、宿泊施設、チェックリストを管理できるようになっています。
+                            すべての必要な旅行管理機能が一つの便利なプラットフォームに統合されています。</p>
+                          <p>* フロントエンド : HTML5, Bootstrap5, Bootstrap Icons, FontAwesome6, FullCalendar, JavaScript<br>
+                             * バックエンド : Laravel 11, SQLite<br>
+                             * API 統合 : Google Maps API
+                          </p>
+                          <p>* GitHub リポジトリ : <a href="https://github.com/Sho-92/MyTrip-app.git" class="text-blue-500 hover:underline">https://github.com/Sho-92/MyTrip-app.git</a></p>
+                          <p>* 紹介動画 : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="../images/mytrip.mp4">今すぐ見る</a></p>
+                        </div>
+                      </div>   
+                    </div>
+                </div>                  
+              </div>
             </section>
         </div>
-            
-        <div class="content ja" style="display: none;">
-            <section id="projects-js" class="p-4" style="min-height: 30vh; background-color: rgba(0, 0, 0, 0.3);">
-                <h2 class="text-2xl font-bold">プロジェクト</h2>
-                <p>こちらが今までの作品です。</p>
-                <a href="projects.html" class="text-blue-500 hover:underline">詳細はこちら</a>    
-            </section>
-        </div>
-        
     </main>
-    
+
     <footer class="p-4">
-        <p>&copy; 2024 SHO </p>
+        <p>&copy; 2024 SHO MAEKAWA </p>
     </footer>
+
+    <div id="videoModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <video id="modalVideo" controls>
+          <source src="" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
     <script src="../js/scripts.js"></script>
 </body>
 </html>

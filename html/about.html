@@ -6,51 +6,191 @@
     <link href="../dist/styles.css" rel="stylesheet"> <!-- Tailwind CSSのスタイル -->
     <link href="../css/common.css" rel="stylesheet"> <!-- 共通スタイル -->
     <link href="../css/about.css" rel="stylesheet"> <!-- indexページ固有のスタイル -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat&family=Lora&display=swap" rel="stylesheet">
+
     <title>Portfolio</title>
 </head>
 <body>
     <header class="p-4">
-        <h1 class="text-3xl font-bold">My Portfolio</h1>
-        <nav class="flex justify-between items-center">
-            <ul class="flex space-x-4">
-                <li><a href="index.html" class="hover:underline">Home</a></li>
-                <li><a href="projects.html" class="hover:underline">Projects</a></li>
-                <li><a href="about.html" class="hover:underline">About</a></li>
-                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        <h1 class="text-3xl font-bold">SHO's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="projects.html" class="nav-button">Projects</a></li>
+                <li><a href="about.html" class="nav-button current">About</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
             </ul>
             <div>
-                <button onclick="switchLanguage('en')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to English">English</button>
-                <button onclick="switchLanguage('ja')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to Japanese">日本語</button>
+                <button onclick="switchLanguage('en')" class="custom-button" aria-label="Switch to English">English</button>
+                <button onclick="switchLanguage('ja')" class="custom-button" aria-label="Switch to Japanese">Japanese</button>
             </div>
         </nav>
     </header>
     
     <main class="p-0">
-        <div class="content en">
-              
-            <section id="about-en" class="p-4" style="min-height: 50vh; background-color: rgba(0, 0, 0, 0.3);">
-                <h2 class="text-2xl font-bold">About Me</h2>
-                <img src="../images/portrait.png" alt="portrait" class="rounded-image">
-              
-                <p>Learn more about my background and skills.</p>
-                <a href="about.html" class="text-blue-500 hover:underline">See More</a>    
-            </section>
+        <div class="content en">           
+            <section id="about-en" class="p-4">
+                <div class="about-profile-parent">
+                    <div class="about-profile mt-8">
+                        <img src="../images/portrait.png" alt="portrait" class="rounded-image">
+                        <h2 class="text-2xl font-bold mt-8">SHO MAEKAWA</h2>
+                        <h2 class="text-2xl font-bold">JAPAN</h2>    
+                    </div>
+                    <div class="skills mt-8">
+                        <h2 class="text-2xl font-bold underline">Technologies Used</h2>
+                        <div class="skills-category">
+                            <h3 class="text-2xl font-bold">Front-End</h3>
+                            <ul>
+                                <li>HTML5, CSS3, JavaScript</li>
+                                <li>Frameworks : Bootstrap 5, Tailwind CSS</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">Back-End</h3>
+                            <ul>
+                                <li>PHP, Laravel</li>
+                                <li>Databases : SQLite, MySQL</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">Tools</h3>
+                            <ul>
+                                <li>Git, GitHub, Visual Studio Code</li>
+                                <li>Hosting : GitHub Pages</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">API</h3>
+                            <ul>
+                                <li>Google Maps API</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">Design Libraries</h3>
+                            <ul>
+                                <li>Bootstrap Icons, FontAwesome 6</li>
+                            </ul>
+                        </div>
+                    </div>
     
+                </div>
+
+                <div class="about-container-parent mt-8">
+                    <div class="about-container">
+                        <h3 class="text-2xl font-bold">About Me</h3>
+                        <div class="about-details">
+                            <p>Hello! I'm Sho Maekawa, a passionate beginner in the web development field. Although I'm new to the industry, I've been dedicating my time to learning the fundamentals of web development, focusing on technologies like HTML, CSS, JavaScript, and PHP.
+                                Recently, I built a travel schedule management application using Laravel, which helped me understand the practical use of back-end and front-end technologies. Through hands-on projects like this, I'm continuously improving my skills and gaining a deeper understanding of web development.
+                                I'm excited to keep learning and growing, with the goal of becoming a full-stack developer in the near future. I am eager to take on new challenges, learn from experienced professionals, and contribute to meaningful projects.
+                            </p>    
+                        </div>
+                        
+                        <p class="text-white mt-8 font-bold hover:underline cursor-pointer" onclick="toggleContent(this)">Learn More</p>
+                        
+                        <div  class="toggle-content hidden">
+                            <h3 class="text-2xl font-bold mt-4">Past Experience</h3>
+                            <div class="about-details">
+                                <p> I expanded my career from Japan to an international stage, working as an acupuncturist on luxury cruise ships with One Spa World, a global leader in the spa and wellness industry. 
+                                    I was nominated as one of the top 20 acupuncturists worldwide, and I excelled not only in the medical field but also in product sales, client acquisition through seminars, and new customer growth.
+                                    Additionally, I demonstrated strong sales skills, effectively marketing my expertise and services. 
+                                    I also played a key role in training my team, teaching them treatment techniques, sales strategies, and methods to enhance customer satisfaction through psychological approaches. 
+                                    These experiences in communication, business, and leadership have significantly contributed to my current career development.
+                                </p>     
+                            </div>
+            
+            
+                            <h3 class="text-2xl font-bold">Why Did I Choose This Career?</h3>
+                            <div class="about-details">
+                                <p> Even while working as an acupuncturist in Japan, I had a growing interest in the IT field. 
+                                    During my five years working on the front lines globally, I began to contemplate the next chapter of my life and realized that I wanted to enrich people’s lives not only through healthcare but also via technology. 
+                                    Interestingly, as I pursued self-study in IT, I found a surprising connection between the healthcare and tech industries: logical thinking. 
+                                    Both fields require a methodical approach to problem-solving. 
+                                    My skills and experiences in these areas have greatly supported my transition into the tech industry. 
+                                    Although the starting point was different, I believe this career path was a natural choice for me.
+                                </p>    
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </section>
         </div>
             
         <div class="content ja" style="display: none;">        
-            <section id="about-js" class="p-4" style="min-height: 30vh; background-color: rgba(0, 0, 0, 0.3);">
-                <h2 class="text-2xl font-bold">自己紹介</h2>
-                <p>私のバックグラウンドやスキルについて。</p>
-                <a href="about.html" class="text-blue-500 hover:underline">詳細はこちら</a>    
-            </section>
+            <section id="about-js" class="p-4">
+                <div class="about-profile-parent">
+                
+                    <div class="about-profile mt-8">
+                        <img src="../images/portrait.png" alt="portrait" class="rounded-image">
+                        <h2 class="text-2xl font-bold mt-8">SHO MAEKAWA</h2>
+                        <h2 class="text-2xl font-bold">JAPAN</h2>    
+                    </div>
+                    <div class="skills mt-8">
+                        <h2 class="text-2xl font-bold underline">使用技術</h2>
+                        <div class="skills-category">
+                            <h3 class="text-2xl font-bold">フロントエンド</h3>
+                            <ul>
+                                <li>HTML5, CSS3, JavaScript</li>
+                                <li>フレームワーク : Bootstrap 5, Tailwind CSS</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">バックエンド</h3>
+                            <ul>
+                                <li>PHP, Laravel</li>
+                                <li>データベース : SQLite, MySQL</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">ツール</h3>
+                            <ul>
+                                <li>Git, GitHub, Visual Studio Code</li>
+                                <li>ホスティング : GitHub Pages</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">API</h3>
+                            <ul>
+                                <li>Google Maps API</li>
+                            </ul>
+                            <h3 class="text-2xl font-bold">デザインライブラリ</h3>
+                            <ul>
+                                <li>Bootstrap Icons, FontAwesome 6</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
     
+                <div class="about-container-parent mt-8">
+                    <div class="about-container">
+                        <h3 class="text-2xl font-bold">自己紹介</h3>
+                        <div class="about-details">
+                            <p> こんにちは！前川翔です。
+                                私はウェブ開発の分野に情熱を持つ初心者です。
+                                業界にはまだ不慣れですが、HTML、CSS、JavaScript、PHPなどのウェブ開発の基礎を学ぶことに時間を費やしています。
+                                最近、Laravelを使用して旅行スケジュール管理アプリケーションを構築し、バックエンドおよびフロントエンド技術の実践的な利用を理解する手助けとなりました。
+                                このような実践的なプロジェクトを通じて、スキルを向上させ、ウェブ開発の理解を深めています。
+                                これからも学び続け、成長していくことを楽しみにしており、近い将来にフルスタックデベロッパーになることを目指しています。
+                                新しい挑戦を受け入れ、経験豊富なプロフェッショナルから学び、意義のあるプロジェクトに貢献できることを楽しみにしています。
+                            </p>    
+                        </div>
+                        
+                        <p class="text-white mt-8 font-bold hover:underline cursor-pointer" onclick="toggleContent(this)">Learn More</p>
+                        
+                        <div  class="toggle-content hidden">
+                            <h3 class="text-2xl font-bold mt-4">過去の経験</h3>
+                            <div class="about-details">
+                                <p> 鍼灸師として日本から海外へ活動を移し、世界でトップシェアを誇るOne Spa Worldのメンバーとして豪華客船で鍼灸師として働いていました。
+                                    トップ20の鍼灸師にノミネートされた経験があり、医療分野だけでなく、プロダクトの販売やセミナーからの集客、新規顧客の獲得にも成功しました。
+                                    治療家でありながら、ビジネスにおいても高い評価を受け、世界の最前線で成果を上げてきました。
+                                    また、チームメンバーに対して治療技術やセミナー・プロダクト販売のスキル、さらに心理学を用いた顧客満足度向上の方法を指導した経験もあります。
+                                    これらの知識やコミュニケーションスキルは、今のキャリアの成長にも大いに寄与しています。                         
+                                </p>     
+                            </div>
+            
+                            <h3 class="text-2xl font-bold">なぜこのキャリアを選んだのか？</h3>
+                            <div class="about-details">
+                                <p> 日本で鍼灸師をしている時から、個人でさまざまなビジネスを行う際にこの業界にも興味を持っていました。
+                                    5年ほど世界の最前線で活躍する中で、次の人生について考え、何がこれからの人生において大切なのかを模索した結果、医療分野だけでなくIT分野からもアプローチして人々の生活を豊かにすることが次の人生プランになりました。
+                                    興味深いことに、この分野を自己学習していく中で、IT業界と医療業界には非常に似ている点があることに気づいたことです。
+                                    それは、論理的思考です。技術的な作業と治療は非常に似ている部分も多く、どちらの分野も問題解決には特にこの思考が必須だと思います。
+                                    これらの知識や経験は、現在のキャリア構築にも役立っていて、スタート地点は異なるものの、この道を選択したのは必然だったと感じています。                          
+                                </p>    
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </section>    
         </div>
-        
     </main>
     
     <footer class="p-4">
-        <p>&copy; 2024 SHO </p>
+        <p>&copy; 2024 SHO MAEKAWA </p>
     </footer>
     <script src="../js/scripts.js"></script>
 </body>

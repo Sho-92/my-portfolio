@@ -1,22 +1,175 @@
-.content section { 
-  margin-bottom: 2rem; /* mb-8 */
+
+main {
+  background: linear-gradient(to bottom, #dcdcdc, #8c8c8c);
+  display: flex;
+  flex-direction: column; /* セクションを縦に並べる */
 }
 
-/* カスタムCSSが必要な場合の例 */
-.project-gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem; /* 画像間の間隔 */
+.content section { 
+  min-height: calc(100vh - 9rem); /* 各セクションの高さを100vhから9rem引いたものに設定 */  
+  padding: 2rem;
+  flex-shrink: 0; /* 高さが縮まないように設定 */
+}
+
+.project-category-page {
+  display: block;
   margin-top: 1rem;
 }
 
-.project-item {
-  border: none;
-  padding: 0.5rem;
-  text-align: center;
+.project-category-page h2:first-letter {
+  font-size: 2em;
 }
 
-.project-item img {
-  max-width: 100%;
-  height: auto;
+.project-gallery-wrapper {
+  position: relative; /* 相対位置を指定 */
+  border: 15px solid #ccc; /* 枠線の色と太さを設定 */
+  padding: 50px; /* コンテンツとの余白 */
+  margin-top: 40px; /* 他の要素との間隔 */
+  max-width: 1000px; /* ラッパー全体の幅を固定 */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; /* 左右のマージンを自動に設定して中央寄せ */
+}
+
+.project-gallery-wrapper h2 {
+  position: absolute; /* 絶対位置を指定 */
+  top: 6px; /* 上に少し移動 */
+  left: -3px; /* 左に少し移動 */
+  padding-right: 10px; /* 背景とテキストの調整 */
+  background-color: inherit; /* 背景色を透明に設定 */
+}
+
+
+.project-gallery {
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦方向に並べる */
+  align-items: center; /* 水平方向の中央配置 */
+  justify-content: center; /* 垂直方向の中央配置 */
+  gap: 1rem; /* カテゴリー間の間隔 */
+  width: 100%; /* ギャラリーの全幅を使用 */
+}
+
+.project-item {
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦方向に並べる */
+  align-items: center; /* 水平方向の中央配置 */
+  justify-content: center; /* 垂直方向の中央配置 */
+  border: 2px solid #ccc;
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 850px; /* アイテムの最大幅を固定 */
+  width: 100%;
+  border-radius: 8px; /* 角を丸める */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す（オプション） */
+}
+
+.project-item img,
+.project-item video {
+  width: 100%;
+  height: auto; /* 高さを自動調整 */
+  max-height: 100%; /* 最大高さを設定 */
+  object-fit: cover; /* アスペクト比を保ちながら切り抜く */
+  margin-bottom: 0.5rem; /* テキストとの間隔を追加（オプション） */
+  border: 2px solid #ccc; /* 枠線の色と太さを指定 */
+  padding: 0.5rem; /* 内側の余白を追加 */
+  border-radius: 8px; /* 角を丸める（オプション） */
+  background-color: rgba(0, 0, 0, 0.1); /* 背景色を追加（オプション） */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  margin: 0 0 2rem 0;
+}
+
+
+/* モーダルの背景 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 背景の暗さ */
+  justify-content: center;
+  align-items: center;
+}
+
+/* モーダルのコンテンツ */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 80%;
+  position: relative;
+}
+
+/* モーダルを閉じるボタン */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+
+.project-detail {
+  width: 780px;
+  max-width: 100%; /* 好みの幅に設定 */
+  text-align: left; /* テキストを左揃えに */
+  align-self: center; /* Flexboxで左から始めるように */
+  padding: 0.5rem 0.5rem;
+  margin: 0.5rem 0;
+  color: #2d3748;
+  background: white;
+  border-top: solid 5px #2d3748;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tab-switch {
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: row; /* 縦方向に並べる */
+  align-items: center; /* 水平方向の中央配置 */
+  justify-content: center; /* 垂直方向の中央配置 */
+  gap: 1rem; /* 各タブ間のスペースを広げる */
+
+}
+
+.tab-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #dcdcdc;/*ボタン色*/
+  color: #6a6e7f;/*ボタン色より暗く*/
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 2px #2d3748;
+  border-right: solid 2px #2d3748;
+  border-radius: 3px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.tab-button:active {
+  -webkit-transform: translate(2px, 2px);
+  transform: translate(2px, 2px);
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  border-right: none;
+}
+
+.tab-button:focus { 
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  color: #2d3748;
+  border-bottom: none; /* フォーカス時のボーダー色 */
+  border-right: none; /* フォーカス時のボーダー色 */
+} 
+
+/* 初期状態が分かりやすいようにホバー効果を追加 */
+.tab-button:hover {
+  background: linear-gradient(135deg, #e0e0e0, #c0c0c0); /* ホバー時の背景色 */
+  color: #2d3748; /* ホバー時のテキスト色 */
 }

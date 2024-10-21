@@ -11,97 +11,82 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <header class="p-4">
-        <h1 class="text-3xl font-bold">My Portfolio</h1>
-        <nav class="flex justify-between items-center">
-            <ul class="flex space-x-4">
-                <li><a href="index.html" class="hover:underline">Home</a></li>
-                <li><a href="projects.html" class="hover:underline">Projects</a></li>
-                <li><a href="about.html" class="hover:underline">About</a></li>
-                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+    <header>
+        <h1 class="text-3xl font-bold">SHO's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-button current">Home</a></li>
+                <li><a href="projects.html" class="nav-button">Projects</a></li>
+                <li><a href="about.html" class="nav-button">About</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
             </ul>
             <div>
-                <button onclick="switchLanguage('en')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to English">English</button>
-                <button onclick="switchLanguage('ja')" class="bg-white text-gray-800 px-3 py-1 rounded hover:bg-gray-200" aria-label="Switch to Japanese">日本語</button>
+                <button onclick="switchLanguage('en')" class="custom-button" aria-label="Switch to English">English</button>
+                <button onclick="switchLanguage('ja')" class="custom-button" aria-label="Switch to Japanese">Japanese</button>
             </div>
         </nav>
     </header>
     
     <main class="p-0 bg-shared">
         <div class="content en">
-            <section class="hero-section bg-shared">
+            <section class="hero-section">
                 <div class="hero-overlay">
                     <h2 class="font-bold">Welcome<br> to<br> My<br> Portfolio</h2>                    
                 </div>
             </section>
             
-            <section id="projects-en" class="p-4 bg-shared">
-                <h2 class="text-2xl font-bold text-center">Projects</h2>
-                <div class="project-gallery mt-8">
+            <section id="projects-en">
+                <h2 class="text-4xl font-bold text-center">Projects</h2>
+                <div class="project-gallery">
                     <div class="project-category">
-                        <h2 class="font-bold text-center">Front-End Developer Projects</h2>
+                        <h2 class="font-bold text-center">Front-End Developer</h2>
                         <div class="project-items-container">
                             <div class="project-item">
-                                <img src="../images/background-index.jpg" alt="Project 2" class="rounded-image">
-                                <p class="mt-2">My Portfolio</p>
+                                <img src="../images/background-index.jpg" alt="Project 2" class="project-image">
                             </div>
                             <!-- 追加のプロジェクト -->
                             <div class="project-item">
-                                <img src="../images/background-index.jpg" alt="Project 2" class="rounded-image">
-                                <p class="mt-2">My Portfolio</p>
+                                <img src="../images/background-index.jpg" alt="Project 2" class="project-image">
                             </div>
                             <div class="project-item">
-                                <img src="../images/background-index.jpg" alt="Project 2" class="rounded-image">
-                                <p class="mt-2">My Portfolio</p>
+                                <img src="../images/background-index.jpg" alt="Project 2" class="project-image">
                             </div>
                             <div class="project-item">
-                                <img src="../images/background-index.jpg" alt="Project 2" class="rounded-image">
-                                <p class="mt-2">My Portfolio</p>
+                                <img src="../images/background-index.jpg" alt="Project 2" class="project-image">
                             </div>
+                            
                         </div>
                     </div>
                     <div class="project-category mt-8">
-                        <h2 class="font-bold text-center">Back-End Developer Projects</h2>
+                        <h2 class="font-bold text-center">Back-End Developer</h2>
                         <div class="project-items-container">
                             <div class="project-item">
-                                <img src="../images/mytrip.png" alt="Project 1" class="rounded-image">
-                                <p class="mt-2">My Trip</p>
+                                <img src="../images/mytrip-logo.png" alt="Project 1" class="project-image">
                             </div>
                             <!-- 追加のプロジェクト -->
-                            <div class="project-item">
-                                <img src="../images/mytrip.png" alt="Project 1" class="rounded-image">
-                                <p class="mt-2">My Trip</p>
-                            </div>
-                            <div class="project-item">
-                                <img src="../images/mytrip.png" alt="Project 1" class="rounded-image">
-                                <p class="mt-2">My Trip</p>
-                            </div>
-                            <div class="project-item">
-                                <img src="../images/mytrip.png" alt="Project 1" class="rounded-image">
-                                <p class="mt-2">My Trip</p>
-                            </div>
                         </div>
                     </div>
                 </div>
 
-                <p class="text-center mt-8">Here is an overview of the projects I have worked on.</p>
+                <!-- <p class="text-center mt-4 text-white">Here is an overview of the projects I have worked on.</p> -->
 
                 <div class="text-center">
-                    <a href="projects.html" class="text-blue-500 hover:underline ">See More</a>    
+                    <a href="projects.html" class="text-white hover:underline ">See More</a>    
                 </div>
             </section>
     
-            <section id="about-en" class="p-4 bg-shared">
-                <h2 class="text-2xl font-bold">About Me</h2>
-                <p>Learn more about my background and skills.</p>
-                <h2 class="custom-heading"><a href="about.html">Who I am ?</a></h2>
-                <a href="about.html" class="text-blue-500 hover:underline">See More</a>    
+            <section id="about-en">
+                <div class="about-container">
+                    <h2 class="custom-about"><a href="about.html"> Who Am I ? </a></h2> 
+                    <p class="mt-8 text-white">Learn more about my background and skills.</p>
+                </div>
             </section>
     
-            <section id="contact-en" class="p-4 bg-shared">
-                <h2 class="text-2xl font-bold">Contact</h2>
-                <p>If you have any questions, feel free to contact me here.</p>
-                <a href="contact.html" class="text-blue-500 hover:underline">See More</a>    
+            <section id="contact-en">
+                <div class="contact-container">
+                    <h2 class="custom-contact"><a href="contact.html">I’d Love to Hear From You !</a></h2>
+                    <p class="mt-8 text-white">If you have any questions, feel free to contact me here.</p>
+                </div>
             </section>
         </div>
             
@@ -113,30 +98,53 @@
 
         <div class="content ja" style="display: none;">
             <section class="hero-section">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <h2 class="text-4xl font-bold">私のポートフォリオへようこそ</h2>
-                    <p class="mt-2">私のプロジェクトを探索し、私についてもっと学びましょう。</p>
+                <div class="hero-overlay">
+                    <h2 class="font-bold">Welcome<br> to<br> My<br> Portfolio</h2>                    
                 </div>
             </section>
-        
-            <section id="projects-js" class="p-4" style="min-height: 30vh; background-color: rgba(0, 0, 0, 0.3);">
-                <h2 class="text-2xl font-bold">プロジェクト</h2>
-                <p>こちらが今までの作品です。</p>
-                <a href="projects.html" class="text-blue-500 hover:underline">詳細はこちら</a>    
+            
+            <section id="projects-ja">
+                <h2 class="text-4xl font-bold text-center">Projects</h2>
+                <div class="project-gallery">
+                    <div class="project-category">
+                        <h2 class="font-bold text-center">フロントエンド</h2>
+                        <div class="project-items-container">
+                            <div class="project-item">
+                                <img src="../images/background-index.jpg" alt="Project 2" class="project-image">
+                            </div>
+                            <!-- 追加のプロジェクト -->
+                        </div>
+                    </div>
+                    <div class="project-category mt-8">
+                        <h2 class="font-bold text-center">バックエンド</h2>
+                        <div class="project-items-container">
+                            <div class="project-item">
+                                <img src="../images/mytrip-logo.png" alt="Project 1" class="project-image">
+                            </div>
+                            <!-- 追加のプロジェクト -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="projects.html" class="text-white hover:underline ">詳細はこちら</a>    
+                </div>
+            </section>
+
+            <section id="about-ja">
+                <div class="about-container">
+                    <h2 class="custom-about"><a href="about.html"> Who Am I ? </a></h2> 
+                    <p class="mt-8 text-white">Learn more about my background and skills.</p>
+                </div>
             </section>
     
-            <section id="about-js" class="p-4" style="min-height: 30vh; background-color: rgba(0, 0, 0, 0.3);">
-                <h2 class="text-2xl font-bold">自己紹介</h2>
-                <p>私のバックグラウンドやスキルについて。</p>
-                <a href="about.html" class="text-blue-500 hover:underline">詳細はこちら</a>    
+            <section id="contact-ja">
+                <div class="contact-container">
+                    <h2 class="custom-contact"><a href="contact.html">I’d Love to Hear From You !</a></h2>
+                    <p class="mt-8 text-white">If you have any questions, feel free to contact me here.</p>
+                </div>
             </section>
-    
-            <section id="contact-js" class="p-4" style="min-height: 20vh; background-color: rgba(0, 0, 0, 0.3);">
-                <h2 class="text-2xl font-bold">コンタクト</h2>
-                <p>質問はこちらからどうぞ。</p>
-                <a href="contact.html" class="text-blue-500 hover:underline">質問はこちら</a>    
-            </section>
+
         </div>
         
     </main>
