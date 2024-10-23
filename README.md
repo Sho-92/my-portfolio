@@ -6,6 +6,7 @@
 - **Purpose** 
   - The goal is to organize my projects and demonstrate my capabilities to potential employers and clients. Additionally, I utilize this opportunity to promote personal growth by learning and implementing new technologies and design trends.
 
+**アプリケーションの概要**
 - **概要** 
   - 自身のプロジェクトやスキルを紹介するために作成しました。デジタルノマドとして自学自習から始まり、個人でプロジェクトを立ち上げ、フロントエンドとバックエンドの開発を行う過程で経験を積んできました。このサイトでは、自身の作品を通じて技術的なスキルとクリエイティビティをアピールします。  
 - **目的** 
@@ -23,6 +24,7 @@
 - **Email Functionality** : Utilizes the third-party service Formspree to provide a simple email sending feature.
 - **Media Queries** : Implements responsive design to adapt to different devices and screen sizes.
 
+**主要機能** 
 - **プロジェクトギャラリー** : フロントエンドおよびバックエンドのプロジェクトを紹介するセクションがあります。
 - **多言語対応** : 英語と日本語の両方で表示可能なため、幅広いユーザーに対応しています。
 - **インタラクティブなナビゲーション** : ユーザーフレンドリーなナビゲーションバーを通じて、各セクションへの簡単なアクセスが可能です。モーダルウィンドウでの動画再生機能や、タグスイッチによるプロジェクトの切り替えが実現されています。
