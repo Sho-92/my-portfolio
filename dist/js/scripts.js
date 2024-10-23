@@ -17,6 +17,16 @@ menuToggle.addEventListener('change', function () {
     }
 });
 
+// 言語選択をした際に、ナビゲーションを閉じる。
+function closeNavList() {
+    menuToggle.checked = false; // トグルをオフにする
+    navList.classList.remove('open'); // フェードインクラスを削除
+    navList.classList.add('close'); // フェードアウトクラスを追加
+    setTimeout(() => {
+        navList.style.display = 'none'; // アニメーション後に非表示にする
+    }, 1000); // アニメーションの時間に合わせて調整
+}
+
 
 
 function switchLanguage(lang) {
