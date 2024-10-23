@@ -13,14 +13,18 @@
 <body>
     <header>
         <h1 class="text-3xl font-bold">SHO's Portfolio</h1>
-        <nav>
-            <ul>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+        <nav class="nav-list">
+            <ul class="menu">
                 <li><a href="index.html" class="nav-button current">Home</a></li>
                 <li><a href="projects.html" class="nav-button">Projects</a></li>
                 <li><a href="about.html" class="nav-button">About</a></li>
                 <li><a href="contact.html" class="nav-button">Contact</a></li>
             </ul>
-            <div>
+            <div class="language">
                 <button onclick="switchLanguage('en')" class="custom-button" aria-label="Switch to English">English</button>
                 <button onclick="switchLanguage('ja')" class="custom-button" aria-label="Switch to Japanese">Japanese</button>
             </div>

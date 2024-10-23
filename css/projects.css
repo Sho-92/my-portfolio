@@ -39,7 +39,6 @@ main {
   background-color: inherit; /* 背景色を透明に設定 */
 }
 
-
 .project-gallery {
   display: flex; /* フレックスボックスを使用 */
   flex-direction: column; /* 縦方向に並べる */
@@ -78,7 +77,6 @@ main {
   margin: 0 0 2rem 0;
 }
 
-
 /* モーダルの背景 */
 .modal {
   display: none;
@@ -112,9 +110,6 @@ main {
   font-weight: bold;
   cursor: pointer;
 }
-
-
-
 
 .project-detail {
   width: 780px;
@@ -172,4 +167,68 @@ main {
 .tab-button:hover {
   background: linear-gradient(135deg, #e0e0e0, #c0c0c0); /* ホバー時の背景色 */
   color: #2d3748; /* ホバー時のテキスト色 */
+}
+
+
+@media screen and (max-width: 768px) { /* スマートフォン用スタイル */
+  body {
+    font-size: 1rem; /* 基本フォントサイズ */
+  }
+
+  .project-gallery-wrapper {
+    position: relative; /* 相対位置を指定 */
+    border: 15px solid #ccc; /* 枠線の色と太さを設定 */
+    padding: 10px; /* コンテンツとの余白 */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; /* 左右のマージンを自動に設定して中央寄せ */
+  }
+  
+  .project-item {
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 水平方向の中央配置 */
+    justify-content: center; /* 垂直方向の中央配置 */
+    border: 2px solid #ccc;
+    margin-top: 50px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px; /* 角を丸める */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す（オプション） */
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 背景の暗さ */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* モーダルのコンテンツ */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 80%;
+    position: relative;
+  }
+  
+  /* モーダルを閉じるボタン */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
 }

@@ -1,5 +1,24 @@
 let currentTab = localStorage.getItem('currentTab') || 'frontend'; // localStorageからタブの状態を取得
 
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.querySelector('.nav-list');
+
+menuToggle.addEventListener('change', function () {
+    if (this.checked) {
+        navList.classList.remove('close'); // フェードアウトクラスを削除
+        navList.classList.add('open'); // フェードインクラスを追加
+        navList.style.display = 'flex'; // 表示状態にする
+    } else {
+        navList.classList.remove('open'); // フェードインクラスを削除
+        navList.classList.add('close'); // フェードアウトクラスを追加
+        setTimeout(() => {
+            navList.style.display = 'none'; // アニメーション後に非表示にする
+        }, 1000); // アニメーションの時間に合わせて調整
+    }
+});
+
+
+
 function switchLanguage(lang) {
     // すべての言語のコンテンツを非表示にする
     document.querySelectorAll('.content').forEach(function(element) {
@@ -112,3 +131,5 @@ window.addEventListener('click', (e) => {
     modalVideo.querySelector('source').src = ''; // モーダルを閉じたら動画のソースをクリア
   }
 });
+
+

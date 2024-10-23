@@ -146,3 +146,52 @@ main {
   display: block; /* トグルが開かれた際に表示 */
   margin-top: 1rem;
 }
+
+
+
+@media screen and (max-width: 768px) { /* スマートフォン用スタイル */
+  body {
+    font-size: 1rem; /* 基本フォントサイズ */
+  }
+
+  .about-profile-parent {
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 子要素を中央揃え */
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .about-profile {
+    width: 100%; /* 幅を40%に設定 */
+    margin: 0;
+    text-align: center;
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 子要素を中央揃え */
+  }
+  
+  .skills {
+    width: 100%; /* 幅を50%に設定 */
+    margin: 0;
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 横方向中央揃え */
+    text-align: center;
+    border: 2px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px; /* 角を丸める */
+    background-color: rgba(204, 204, 204, 0.1); /* 背景色を追加（オプション） */
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); 
+  }
+
+  .about-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem; /* 各見出しの下にスペースを追加 */
+    color: #2d3748; /* 見出しの色 */
+    position: relative; /* 下線のために必要 */
+    display: inline-block; /* インラインブロックに変更 */
+  }
+  
+  
+}
