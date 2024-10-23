@@ -1,3 +1,6 @@
+<p align="center"><img src="https://github.com/Sho-92/my-portfolio/images/background.png?raw=true" width="400" alt="My-Portfolio Logo"></p>
+
+
 # SHO's Portfolio
 
 ## Application Overview
