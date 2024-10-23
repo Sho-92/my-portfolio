@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/Sho-92/my-portfolio/images/background.png" width="400" alt="My-Portfolio Logo"></p>
+<p align="center"><img src="https://github.com/Sho-92/my-portfolio/images/background-index.png" width="400" alt="My-Portfolio Logo"></p>
 
 
 # SHO's Portfolio
