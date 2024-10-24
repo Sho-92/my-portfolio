@@ -379,7 +379,7 @@ p {
     justify-content: center; /* 中央揃え */
     align-items: center;
     gap: 1rem;
-    margin: 0 0 50px;
+    margin: 0 0 100px;
     width: 100%;
   }
 
