@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="dist/styles.css" rel="stylesheet"> 
-    <link href="dist/css/common.css" rel="stylesheet"> 
-    <link href="dist/css/projects.css" rel="stylesheet"> 
+    <link href="../dist/css/styles.css" rel="stylesheet"> <!-- Tailwind CSSのスタイル -->
+    <link href="../dist/css/common.css" rel="stylesheet"> <!-- 共通スタイル -->
+    <link href="../dist/css/projects.css" rel="stylesheet"> <!-- indexページ固有のスタイル -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat&family=Lora&display=swap" rel="stylesheet">
 
     <title>Portfolio</title>
@@ -33,7 +33,7 @@
     
     <main class="p-0">
 
-      <!-- English contents -->
+      <!-- 英語コンテンツ -->
       <div class="content en">
           <section id="projects-en" class="p-4">
               <h2 class="text-4xl text-center font-bold">Projects</h2>
@@ -42,13 +42,13 @@
                 <button onclick="switchTab('backend')" class="tab-button">Back-End</button>
               </div>
       
-              <!-- Front-end projects -->
+              <!-- フロントエンドプロジェクト -->
               <div class="project-category-page frontend" style="display: block;">
                 <div class="project-gallery-wrapper">
                   <h2 class="text-3xl font-bold">Front-End</h2>  
                   <div class="project-gallery mt-4">
                       <div class="project-item">
-                        <img src="dist/images/background-index.png" alt="Project 2">
+                        <img src="../dist/images/background-index.png" alt="Project 2">
                         <h3 class="text-2xl font-bold">SHO's Portfolio</h3>
                         <div class="project-detail">
                           <p>This application was created to showcase my projects and skills.
@@ -67,13 +67,13 @@
                 </div>
               </div>
 
-              <!-- Back-end projects -->
+              <!-- バックエンドプロジェクト -->
               <div class="project-category-page backend" style="display: none;">
                 <div class="project-gallery-wrapper">
                   <h2 class="text-3xl font-bold">Back-End</h2>  
                   <div class="project-gallery mt-4">
                       <div class="project-item">
-                        <a href="#" class="open-modal" data-video-src="dist/images/mytrip.mp4"><img src="dist/images/mytrip.png" alt="Project 1"></a>
+                        <a href="#" class="open-modal" data-video-src="../dist/images/mytrip.mp4"><img src="../dist/images/mytrip.png" alt="Project 1"></a>
                         <h3 class="text-2xl font-bold">My Trip</h3>
                         <div class="project-detail">
                           <p>This app is designed to simplify travel schedule management.
@@ -84,7 +84,7 @@
                             * API Integration : Google Maps API
                           </p>
                           <p>* GitHub Repository : <a href="https://github.com/Sho-92/MyTrip-app.git" class="text-blue-500 hover:underline">https://github.com/Sho-92/MyTrip-app.git</a></p>
-                          <p>* Preview the App : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="dist/images/mytrip.mp4">Watch Now</a></p>
+                          <p>* Preview the App : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="../dist/images/mytrip.mp4">Watch Now</a></p>
                         </div>
                       </div>   
                     </div>
@@ -93,7 +93,7 @@
           </section>
       </div>
 
-      <!-- Japanese contents -->
+      <!-- 日本語コンテンツ -->
       <div class="content ja" style="display: none;">
           <section id="projects-ja" class="p-4">
             <h2 class="text-4xl text-center font-bold">Projects</h2>
@@ -102,13 +102,13 @@
                 <button onclick="switchTab('backend')" class="tab-button">バックエンド</button>
               </div>
       
-              <!-- Front-end contents -->
+              <!-- フロントエンドプロジェクト -->
               <div class="project-category-page frontend" style="display: block;">
                 <div class="project-gallery-wrapper">
                   <h2 class="text-3xl font-bold">Front-End</h2>  
                   <div class="project-gallery mt-4">
                       <div class="project-item">
-                        <img src="dist/images/background-index.png" alt="Project 2">
+                        <img src="../dist/images/background-index.png" alt="Project 2">
                         <h3 class="text-2xl font-bold">SHO's Portfolio</h3>
                         <div class="project-detail">
                           <p>こちらは自身のプロジェクトやスキルを紹介するために作成しました。
@@ -127,13 +127,13 @@
                 </div>
               </div>
 
-              <!-- Back-end projects -->
+              <!-- バックエンドプロジェクト -->
               <div class="project-category-page backend" style="display: none;">
                 <div class="project-gallery-wrapper">
                   <h2 class="text-3xl font-bold">Back-End</h2>  
                   <div class="project-gallery mt-4">
                       <div class="project-item">
-                        <a href="#" class="open-modal" data-video-src="dist/images/mytrip.mp4"><img src="dist/images/mytrip.png" alt="Project 1"></a>
+                        <a href="#" class="open-modal" data-video-src="../dist/images/mytrip.mp4"><img src="../dist/images/mytrip.png" alt="Project 1"></a>
                         <h3 class="text-2xl font-bold">- My Trip -</h3>
                         <div class="project-detail">
                           <p>このアプリは、旅行スケジュール管理を簡素化するために設計されています。
@@ -144,7 +144,7 @@
                              * API 統合 : Google Maps API
                           </p>
                           <p>* GitHub リポジトリ : <a href="https://github.com/Sho-92/MyTrip-app.git" class="text-blue-500 hover:underline">https://github.com/Sho-92/MyTrip-app.git</a></p>
-                          <p>* 紹介動画 : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="dist/images/mytrip.mp4">今すぐ見る</a></p>
+                          <p>* 紹介動画 : <a href="#" class="open-modal text-blue-500 hover:underline" data-video-src="../dist/images/mytrip.mp4">今すぐ見る</a></p>
                         </div>
                       </div>   
                     </div>
@@ -167,6 +167,6 @@
       </div>
     </div>
 
-    <script src="dist/js/scripts.js"></script>
+    <script src="../dist/js/scripts.js"></script>
 </body>
 </html>

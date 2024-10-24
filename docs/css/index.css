@@ -1,0 +1,351 @@
+html, body {
+  scroll-behavior: smooth; /* スムーズスクロールを有効に */
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* セクションを縦に並べる */
+  scroll-snap-type: y mandatory; /* 縦方向のスナップを有効に */
+}
+
+.content section { 
+  scroll-snap-align: start; /* 各セクションが先頭に揃う */
+  height: calc(100vh - 9rem); /* 各セクションの高さを100vhから9rem引いたものに設定 */
+  flex-shrink: 0; /* 高さが縮まないように設定 */
+}
+
+/* 共通の背景スタイル */
+.bg-shared {
+  background: url('../images/background-index.jpg') no-repeat center center/cover; /* 背景画像を設定 */
+  background-attachment: fixed; /* スクロール時に背景が固定される */
+  background-size: cover; /* 画像をカバーさせる */
+
+}
+
+
+/* Heroセクションの固定 */
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* h1のスタイル */
+.hero-section h2 {
+  font-size: clamp(2rem, 8rem, 6rem); /* 最小2rem、最大6rem、ビューポート幅に応じて調整 */
+  color: transparent;
+  -webkit-text-stroke: 1px #fff; /* テキストの外枠の太さと色を設定 */
+  fill: transparent; /* テキストの中身を透明にする */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0;
+  opacity: 0; /* 最初は透明に設定 */
+  animation: fadeIn 2s forwards; /* アニメーションを追加 */
+  animation-delay: 0.5s; /* アニメーションの開始を遅らせる */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heroセクションの中のオーバーレイ */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明のオーバーレイ */
+  z-index: 1;
+  display: flex; /* フレックスボックスを使用 */
+  align-items: center; /* 垂直方向の中央配置 */
+  justify-content: center; /* 水平方向の中央配置 */
+}
+
+/* 各セクションに共通の背景クラスを適用 */
+#projects-en, #about-en, #contact-en, 
+#projects-ja, #about-ja, #contact-ja {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 9rem);
+  padding: 0; /* セクションのパディングをリセット */
+  margin: 0;  /* セクションのマージンをリセット */
+}
+
+#projects-en, #projects-ja {
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦に並べる */
+  align-items: center; /* 水平方向の中央配置 */
+  justify-content: center; /* 垂直方向の中央配置 */
+}
+
+
+/* カスタムCSSが必要な場合の例 */
+.project-gallery {
+  display: flex; /* フレックスボックスを使用して左右に並べる */
+  flex-direction: column; /* 縦に並べる */
+  align-items: center; /* 垂直方向の中央配置 */
+  gap: 0rem; /* カテゴリー間の間隔 */
+  width: 100%; /* ギャラリーの全幅を使用 */
+  background-color: rgba(0, 0, 0, 0.3); /* 薄い黒の背景 */
+  padding: 1rem; /* 内側のパディングを追加（必要に応じて調整） */
+  margin: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* ボカシ効果を追加 */
+}
+
+.project-category {
+  display: block; /* 各カテゴリーをブロック要素として扱う */
+  width: 680px; /* 各ボックスの最大幅を設定 */
+  border-bottom: 2px solid #ccc; /* 下線を追加 */
+  box-sizing: border-box; /* パディングを含めた幅調整 */
+  background-color: transparent; /* 背景を透明にする */
+  opacity: 0; /* 最初は透明に設定 */
+  transform: translateX(-30px); /* 初期状態で左にシフト */
+  transition: opacity 2.5s ease, transform 3.0s ease; /* スムーズな遷移 */
+}
+
+.project-category.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 2.5s ease, transform 3.0s ease;
+}
+
+.project-category h2 {
+  margin-bottom: 0.5rem; /* 見出しの下部余白 */
+  color: #fff; /* 見出しの文字色 */
+}
+
+.project-items-container {
+  display: flex; /* 横並びにする */
+  justify-content: flex-start; /* 初期状態では左揃え */
+  overflow-x: auto; /* 横スクロールを有効にする */
+  white-space: nowrap; /* アイテムが横並びになるように設定 */
+  width: 100%; /* 固定幅を指定 */
+  max-width: 680px; /* 最大幅を600pxに設定 */
+  height: auto; /* 固定高さを指定 */
+}
+
+.project-item {
+  flex: 0 0 210px; /* 各アイテムの幅を固定 */
+  height: auto; /* 高さを100%に設定 */
+  margin-right: 1rem; /* アイテム間の間隔 */
+  text-align: center;
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦に並べる */
+  align-items: center; /* アイテムを中央揃え */
+}
+
+.project-image {
+  width: 150px; /* 好みのサイズに設定 */
+  height: 150px; /* 好みのサイズに設定 */
+  max-height: 400px; /* 最大高さを設定 */
+  object-fit: cover; /* アスペクト比を保ちながら切り抜く */
+  margin-bottom: 0.5rem; /* テキストとの間隔を追加（オプション） */
+  border: 2px solid #ccc; /* 枠線の色と太さを指定 */
+  padding: 0.5rem; /* 内側の余白を追加 */
+  border-radius: 8px; /* 角を丸める（オプション） */
+  background-color: rgba(0, 0, 0, 0.1); /* 背景色を追加（オプション） */
+
+}
+
+/* 最後のアイテムに右マージンを適用しない */
+.project-items-container .project-item:last-child {
+  margin-right: 0; /* 最後のアイテムは右マージンをなくす */
+}
+
+.about-container {
+  display: flex; /* Flexboxを使用 */
+  flex-direction: column; /* 縦に並べる */
+  justify-content: center; /* 横方向の中央配置 */
+  align-items: center; /* 縦方向の中央配置 */
+  height:  calc(100vh - 9rem);/* ビューポートの高さに合わせる */
+  text-align: center; /* テキストの中央揃え */
+}
+
+.custom-about {
+  font-size: clamp(2rem, 6rem, 6rem); /* 最小2rem、最大6rem、ビューポート幅に応じて調整 */
+  color: #fff; /* テキストカラーを設定 */
+  text-transform: uppercase; /* テキストを大文字に変換 */
+  letter-spacing: 0.1em; /* 文字間隔を設定 */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* テキストシャドウを追加 */
+  transform: scale(0); /* 初期状態でスケールを0に */
+  transition: transform 2.0s ease; /* スケールの遷移を設定 */
+}
+
+/* ホバー時のアニメーションを追加 */
+.custom-about:hover {
+  transform: scale(1.1); /* 少し拡大させる */
+  /* color: #f0f; テキストカラーを変える（オプション） */
+}
+
+.contact-container {
+  display: flex; /* Flexboxを使用 */
+  flex-direction: column; /* 縦に並べる */
+  justify-content: center; /* 横方向の中央配置 */
+  align-items: center; /* 縦方向の中央配置 */
+  height:  calc(100vh - 9rem);/* ビューポートの高さに合わせる */
+  text-align: center; /* テキストの中央揃え */
+}
+
+.custom-contact {
+  font-size: clamp(1rem, 3rem, 3rem); /* 最小2rem、最大6rem、ビューポート幅に応じて調整 */
+  color: #fff; /* テキストカラーを設定 */
+  text-transform: uppercase; /* テキストを大文字に変換 */
+  letter-spacing: 0.1em; /* 文字間隔を設定 */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* テキストシャドウを追加 */
+  transform: scale(0); /* 初期状態でスケールを0に */
+  transition: transform 2.0s ease; /* スケールの遷移を設定 */
+}
+
+/* ホバー時のアニメーションを追加 */
+.custom-contact:hover {
+  transform: scale(1.1); /* 少し拡大させる */
+  /* color: #f0f; テキストカラーを変える（オプション） */
+}
+
+.fade-in-scale {
+  transform: scale(1); /* アニメーション後のスケールを1に */
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) { /* スマートフォン用スタイル */
+  body {
+    font-size: 1rem; /* 基本フォントサイズ */
+  }
+
+  .bg-shared {
+    background: url('../images/background-index.jpg') no-repeat center center/cover; /* 背景画像を設定 */
+    background-attachment: fixed; /* スクロール時に背景が固定される */
+    background-size: cover; /* 画像をカバーさせる */
+    background-position: 85% center;
+  }
+
+  .content section { 
+    scroll-snap-align: start; /* 各セクションが先頭に揃う */
+    height: calc(100vh - 9rem); /* 各セクションの高さを100vhから9rem引いたものに設定 */
+    flex-shrink: 0; /* 高さが縮まないように設定 */
+  }
+  
+  .hero-section h2 {
+    font-size: 4rem; /* ヒーローセクションのフォントサイズを調整 */
+  }
+
+  .project-gallery {
+    display: flex; /* フレックスボックスを使用して左右に並べる */
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 垂直方向の中央配置 */
+    gap: 0rem; /* カテゴリー間の間隔 */
+    width: 100%; /* ギャラリーの全幅を使用 */
+    background-color: rgba(0, 0, 0, 0.3); /* 薄い黒の背景 */
+    padding: 1rem; /* 内側のパディングを追加（必要に応じて調整） */
+    margin: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* ボカシ効果を追加 */
+  }
+  
+  .project-category {
+    display: block; /* 各カテゴリーをブロック要素として扱う */
+    width: 100%; /* 各ボックスの最大幅を設定 */
+    border-bottom: 2px solid #ccc; /* 下線を追加 */
+    box-sizing: border-box; /* パディングを含めた幅調整 */
+    background-color: transparent; /* 背景を透明にする */
+    opacity: 0; /* 最初は透明に設定 */
+    transform: translateX(-30px); /* 初期状態で左にシフト */
+    transition: opacity 2.5s ease, transform 3.0s ease; /* スムーズな遷移 */
+  }
+  
+  .project-category.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 2.5s ease, transform 3.0s ease;
+  }
+  
+  .project-category h2 {
+    margin-bottom: 0.5rem; /* 見出しの下部余白 */
+    color: #fff; /* 見出しの文字色 */
+  }
+  
+  .project-items-container {
+    display: flex; /* 横並びにする */
+    justify-content: flex-start; /* 初期状態では左揃え */
+    overflow-x: auto; /* 横スクロールを有効にする */
+    white-space: nowrap; /* アイテムが横並びになるように設定 */
+    width: 100%; /* 固定幅を指定 */
+    max-width: 100%; /* 最大幅を600pxに設定 */
+    padding: 0.3rem; /* パディングを追加してスクロールのしやすさを向上 */
+  }
+  
+  .project-item {
+    flex: 0 0 120px; /* 各アイテムの幅を縮小 */
+    margin-right: 1rem; /* アイテム間の間隔 */
+    height: auto; /* 高さは自動調整 */
+  }
+  
+  .project-image {
+    width: 100px; /* 幅を縮小 */
+    height: 100px; /* 高さを縮小 */
+    max-height: none; /* 最大高さの制限を解除 */
+    margin-bottom: 0.5rem;
+    border-radius: 6px; /* 角丸を少し縮小 */  
+  }
+  
+  /* 最後のアイテムに右マージンを適用しない */
+  .project-items-container .project-item:last-child {
+    margin-right: 0; /* 最後のアイテムは右マージンをなくす */
+  }
+  
+  .about-container {
+    display: flex; /* Flexboxを使用 */
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center; /* 横方向の中央配置 */
+    align-items: center; /* 縦方向の中央配置 */
+    height:  calc(100vh - 9rem);/* ビューポートの高さに合わせる */
+    text-align: center; /* テキストの中央揃え */
+  }
+  
+  .custom-about {
+    font-size: clamp(1rem, 3rem, 3rem); /* 最小2rem、最大6rem、ビューポート幅に応じて調整 */
+    color: #fff; /* テキストカラーを設定 */
+    text-transform: uppercase; /* テキストを大文字に変換 */
+    letter-spacing: 0.1em; /* 文字間隔を設定 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* テキストシャドウを追加 */
+    transform: scale(0); /* 初期状態でスケールを0に */
+    transition: transform 2.0s ease; /* スケールの遷移を設定 */
+  }
+    
+  .contact-container {
+    display: flex; /* Flexboxを使用 */
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center; /* 横方向の中央配置 */
+    align-items: center; /* 縦方向の中央配置 */
+    height:  calc(100vh - 9rem);/* ビューポートの高さに合わせる */
+    text-align: center; /* テキストの中央揃え */
+  }
+  
+  .custom-contact {
+    font-size: clamp(1rem, 3rem, 3rem); /* 最小2rem、最大6rem、ビューポート幅に応じて調整 */
+    color: #fff; /* テキストカラーを設定 */
+    text-transform: uppercase; /* テキストを大文字に変換 */
+    letter-spacing: 0.1em; /* 文字間隔を設定 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* テキストシャドウを追加 */
+    transform: scale(0); /* 初期状態でスケールを0に */
+    transition: transform 2.0s ease; /* スケールの遷移を設定 */
+  }
+    
+  .fade-in-scale {
+    transform: scale(1); /* アニメーション後のスケールを1に */
+  }
+  

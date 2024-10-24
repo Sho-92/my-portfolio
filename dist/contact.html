@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/css/styles.css" rel="stylesheet"> <!-- Tailwind CSSのスタイル -->
+  <link href="../dist/css/common.css" rel="stylesheet"> <!-- 共通スタイル -->
+  <link href="../dist/css/contact.css" rel="stylesheet"> <!-- indexページ固有のスタイル -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat&family=Lora&display=swap" rel="stylesheet">
+
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="text-3xl font-bold"><a href="index.html">SHO's Portfolio</a></h1>
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+    </label>
+    <nav class="nav-list">
+        <ul class="menu">
+            <li><a href="index.html" class="nav-button">Home</a></li>
+            <li><a href="projects.html" class="nav-button">Projects</a></li>
+            <li><a href="about.html" class="nav-button">About</a></li>
+            <li><a href="contact.html" class="nav-button current">Contact</a></li>
+        </ul>
+        <div class="language">
+            <button onclick="switchLanguage('en'); closeNavList();" class="custom-button" aria-label="Switch to English">English</button>
+            <button onclick="switchLanguage('ja'); closeNavList();" class="custom-button" aria-label="Switch to Japanese">Japanese</button>
+        </div>
+    </nav>
+
+  </header>
+
+  <main class="p-0">
+    <div class="content en">
+
+      <div class="wrapper">
+        <video autoplay loop muted class="wrapper__video">
+          <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3.mp4">
+        </video>
+      </div>
+
+
+
+        <section id="contact-en" class="contact-section">
+          <h2 class="text-4xl font-bold">Contact</h2>
+          <form action="https://formspree.io/f/xanyydaa" method="POST">
+            <label>
+              <input type="email" name="email" autocomplete="email" placeholder="Your email :">
+            </label>
+            <label>
+              <textarea name="message" placeholder="Please provide details about your inquiry or project."></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <p>If you have any questions, feel free to contact me here.</p>
+            <button type="submit" class="submit-button">Send</button>
+          </form>
+        </section>    
+    </div>
+
+    <div class="content ja" style="display: none;">
+      <div class="wrapper">
+        <video autoplay loop muted class="wrapper__video">
+          <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3.mp4">
+        </video>
+      </div>
+
+      <section id="contact-js" class="contact-section">
+        <h2 class="text-4xl font-bold">Contact</h2>
+        <form action="https://formspree.io/f/xanyydaa" method="POST">
+          <label>
+            <input type="email" name="email" autocomplete="email" placeholder="あなたのメールアドレス：">
+          </label>
+          <label>
+            <textarea name="message" placeholder="ご質問やプロジェクトについての詳細をお知らせください。"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <p>ご質問がある場合は、こちらからお気軽にお問い合わせください。</p>
+          <button type="submit" class="submit-button">送信</button>
+        </form>
+
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="p-4">
+    <p>&copy; 2024 SHO MAEKAWA </p>
+  </footer>
+  <script src="../dist/js/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+/* Reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ヘッダーの固定 */
+header {
+  display: flex; /* ヘッダー全体をフレックスコンテナに */
+  align-items: center; /* 垂直方向の中央揃え */
+  position: fixed;
+  background-color: #dcdcdc;
+  color: #2d3748; /* text */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  padding: 1rem 1rem;
+  z-index: 10; /* 重なり順を制御 */
+  border-bottom: solid 1px #2d3748;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  margin: 0; /* デフォルトのマージンをリセット */
+  flex: 0 1 auto; /* 固定幅を設定するためのフレックスプロパティ */
+}
+
+nav {
+  display: flex;
+  flex: 1; /* ナビゲーションがヘッダー全体の幅を占める */
+  justify-content: center; /* 全体を中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  text-align: center;
+}
+
+/* ナビゲーションメニュー */
+nav ul {
+  display: flex;
+  justify-content: center; /* 横方向中央揃え */
+  align-items: center; /* 垂直中央揃え */
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+  padding: 0;
+  margin: 0;
+  gap: 0rem; /* 各アイテム間のスペース */
+  flex: 1; /* ulにスペースを与える */
+}
+
+
+/* 言語切り替えボタン */
+nav div {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* ボタンを右に配置 */
+  gap: 0.3rem; /* ボタン間のスペース */
+}
+
+
+/* 画面全体の高さを確保し、スクロールの調整 */
+body {
+  background: linear-gradient(to bottom, #dcdcdc, #b0b0b0);
+  margin: 0;
+  padding: 0;
+}
+
+
+/* メインコンテンツの調整 */
+main {
+  height: calc(100vh - 9rem); /* 余白を考慮した高さに調整 */
+  margin-top: 6rem; /* ヘッダーの高さ分の余白 */
+  margin-bottom: 3rem; /* フッターの高さ分の余白 */
+  overflow-y: auto;
+}
+
+/* フッターの固定 */
+footer {
+  position: fixed;
+  background-color: #b0b0b0;
+  color: #2d3748; /* text */
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  padding: 1rem;
+  z-index: 10; /* 重なり順を制御 */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+h1 {
+  font-family:'Lora', serif;
+  color: #2d3748;
+}
+
+h2 {
+  font-family: 'Lora', serif;
+  color: #2d3748;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* 英語のコンテンツは初期状態で表示 */
+.content.en {
+  display: block; /* 初期状態で表示 */
+  transition: opacity 0.5s ease; /* 遷移を追加 */
+  opacity: 1; /* 初期状態は不透明 */
+}
+
+/* 日本語のコンテンツは初期状態で非表示 */
+.content.ja {
+  display: none; /* 初期状態で非表示 */
+  transition: opacity 0.5s ease; /* 遷移を追加 */
+  opacity: 0; /* 初期状態は透明 */
+}
+
+/* 英語のコンテンツが表示される時 */
+.content.en:not([style*="display: none"]) {
+  opacity: 1; /* 表示状態の透明度を1に */
+}
+
+/* 日本語のコンテンツが表示される時 */
+.content.ja:not([style*="display: none"]) {
+  display: block; /* 表示状態にする */
+  opacity: 1; /* 表示状態の透明度を1に */
+}
+
+
+/* カスタムボタンのスタイル */
+.custom-button {
+  display: inline-block;
+  text-decoration: none;
+  background: #dcdcdc;/*ボタン色*/
+  color: #6a6e7f;/*ボタン色より暗く*/
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 2px #2d3748;
+  border-right: solid 2px #2d3748;
+  border-radius: 3px;
+  padding: 0.3em 0.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.custom-button:active {
+  -webkit-transform: translate(2px, 2px);
+  transform: translate(2px, 2px);
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  border-right: none;
+}
+
+/* 初期状態が分かりやすいようにホバー効果を追加 */
+.custom-button:hover {
+  background: linear-gradient(135deg, #e0e0e0, #c0c0c0); /* ホバー時の背景色 */
+  color: #2d3748; /* ホバー時のテキスト色 */
+}
+
+
+
+.nav-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #dcdcdc;/*ボタン色*/
+  color: #6a6e7f;/*ボタン色より暗く*/
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 2px #2d3748;
+  border-right: solid 2px #2d3748;
+  border-radius: 3px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.nav-button.current {
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8); /* 現在のページのリンクの背景色 */
+  color: #2d3748; /* 現在のページのリンクのテキスト色 */
+  border-bottom: none;
+  border-right: none;
+}
+
+.nav-button:active {
+  -webkit-transform: translate(2px, 2px);
+  transform: translate(2px, 2px);
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  border-right: none;
+}
+
+.nav-button:focus { 
+  background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+  color: #2d3748;
+  border-bottom: none; /* フォーカス時のボーダー色 */
+  border-right: none; /* フォーカス時のボーダー色 */
+} 
+
+/* 初期状態が分かりやすいようにホバー効果を追加 */
+.nav-button:hover {
+  background: linear-gradient(135deg, #e0e0e0, #c0c0c0); /* ホバー時の背景色 */
+  color: #2d3748; /* ホバー時のテキスト色 */
+}
+
+#menu-toggle {
+  display: none; /* チェックボックスを非表示にする */
+}
+
+
+/* iPhone 14以降の設定 (幅375px以上) */
+@media  screen and (max-width: 768px) {
+  header {
+    display: flex; /* Flexboxを使用 */
+    flex-direction: row; /* ヘッダー内の要素を横に並べる */
+    justify-content: space-between; /* 左右の要素を分散配置 */
+    align-items: center; /* 垂直方向の中央配置 */
+    height: 6rem; /* ヘッダーの高さを固定 */
+    padding: 1rem; /* パディングを調整 */
+  }
+
+  main {
+    height: calc(100vh - 9rem); /* 余白を考慮した高さに調整 */
+    margin-top: 6rem; /* ヘッダーの高さ分の余白 */
+    margin-bottom: 3rem; /* フッターの高さ分の余白 */
+    overflow-y: auto;
+
+  }
+
+  footer {
+    height: 3rem; /* フッターの高さを自動に */
+    padding: 1rem; /* パディングを調整 */
+  }
+    
+  /* ハンバーガーメニューとトグルボタンの設定 */
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-button-container {
+    display: flex;
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+
+  .menu-button::before {
+    content: "";
+    margin-top: -8px;
+  }
+
+  .menu-button::after {
+    content: "";
+    margin-top: 8px;
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+
+  /* メニューがチェックされたときにリストを表示 */
+  #menu-toggle:checked ~ .nav-list {
+    display: flex;
+  }
+
+  /* メニューリスト全体のスタイル */
+  .nav-list {
+    position: absolute;
+    top: 6rem; /* header の下に配置 */
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 9rem);
+    background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+    z-index: 1000;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center; /* ナビゲーションのアイテムを右端に配置 */
+    align-items: center; 
+    opacity: 0;
+  }
+
+  /* 開いた状態のスタイル */
+  .nav-list.open {
+    display: flex; /* 表示状態に */
+    animation: slideIn 1.0s forwards; /* スライドインアニメーション */
+  }
+
+  /* 閉じた状態のスタイル */
+  .nav-list.close {
+    animation: slideOut 1.0s forwards; /* スライドアウトアニメーション */
+  }
+
+  /* スライドインアニメーション */
+  @keyframes slideIn {
+    0% {
+        transform: translateX(100%); /* headerの上から開始 */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* 元の位置までスライド */
+        opacity: 1;
+    }
+  }
+
+  /* スライドアウトアニメーション */
+  @keyframes slideOut {
+    0% {
+        transform: translateX(0); /* 元の位置から開始 */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%); /* 上にスライドアウト */
+        opacity: 0;
+    }
+  }
+
+  .custom-button, .nav-button {
+    width: 100%; /* ボタンの幅を100%に */
+    margin: 0.5rem 0; /* ボタン間のスペースを追加 */
+  }
+
+  .custom-button {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #dcdcdc;/*ボタン色*/
+    color: #6a6e7f;/*ボタン色より暗く*/
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 2px #2d3748;
+    border-right: solid 2px #2d3748;
+    border-radius: 3px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  }
+  
+  .custom-button:active {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+    background: linear-gradient(135deg, #d4d4d4, #b8b8b8);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+    border-right: none;
+  }
+  
+  .language {
+    display: flex; /* flexboxを使用 */
+    justify-content: center; /* 中央揃え */
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 50px;
+    width: 100%;
+  }
+
+  /* メニュー全体のスタイル */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  /* メニューアイテムのスタイル */
+  .menu > li {
+    width: 100%;
+    color: white;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0; /* 内容の上下パディング */
+  }
+
+
+
+
+}
