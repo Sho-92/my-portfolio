@@ -1,8 +1,9 @@
 {
   "devDependencies": {
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.13"
   },
   "scripts": {
-    "build": "cp -r src/* dist/ && cp -r dist/* docs/"
+    "build":  "rimraf docs/**/* && cp -r src/* dist/ && npx tailwindcss -i ./src/css/styles.css -o ./dist/css/styles.css && cp -r dist/* docs/"
   }
 }

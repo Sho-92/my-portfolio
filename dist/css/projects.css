@@ -37,6 +37,7 @@ main {
   left: -3px; /* 左に少し移動 */
   padding-right: 10px; /* 背景とテキストの調整 */
   background-color: inherit; /* 背景色を透明に設定 */
+  color: #2d3748;
 }
 
 .project-gallery {
