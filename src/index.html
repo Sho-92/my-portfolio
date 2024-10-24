@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/styles.css" rel="stylesheet"> <!-- Tailwind CSSのスタイル -->
+    <link href="../dist/css/common.css" rel="stylesheet"> <!-- 共通スタイル -->
+    <link href="../dist/css/index.css" rel="stylesheet"> <!-- indexページ固有のスタイル -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat&family=Lora&display=swap" rel="stylesheet">
+
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-3xl font-bold"><a href="index.html">SHO's Portfolio</a></h1>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+        <nav class="nav-list">
+            <ul class="menu">
+                <li><a href="index.html" class="nav-button current">Home</a></li>
+                <li><a href="projects.html" class="nav-button">Projects</a></li>
+                <li><a href="about.html" class="nav-button">About</a></li>
+                <li><a href="contact.html" class="nav-button">Contact</a></li>
+            </ul>
+            <div class="language">
+                <button onclick="switchLanguage('en'); closeNavList();" class="custom-button" aria-label="Switch to English">English</button>
+                <button onclick="switchLanguage('ja'); closeNavList();" class="custom-button" aria-label="Switch to Japanese">Japanese</button>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="p-0 bg-shared">
+        <div class="content en">
+            <section class="hero-section">
+                <div class="hero-overlay">
+                    <h2 class="font-bold">Welcome<br> to<br> My<br> Portfolio</h2>                    
+                </div>
+            </section>
+            
+            <section id="projects-en">
+                <h2 class="text-4xl font-bold text-center">Projects</h2>
+                <div class="project-gallery">
+                    <div class="project-category">
+                        <h2 class="font-bold text-center">Front-End Developer</h2>
+                        <div class="project-items-container">
+                            <div class="project-item">
+                                <img src="../dist/images/background-index.png" alt="Project 2" class="project-image">
+                            </div>
+                            <!-- 追加のプロジェクト -->                            
+                        </div>
+                    </div>
+                    <div class="project-category mt-8">
+                        <h2 class="font-bold text-center">Back-End Developer</h2>
+                        <div class="project-items-container">
+                            <div class="project-item">
+                                <img src="../dist/images/mytrip-logo.png" alt="Project 1" class="project-image">
+                            </div>
+                            <!-- 追加のプロジェクト -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="projects.html" class="text-white hover:underline ">See More</a>    
+                </div>
+            </section>
+    
+            <section id="about-en">
+                <div class="about-container">
+                    <h2 class="custom-about"><a href="about.html"> Who Am I ? </a></h2> 
+                    <p class="mt-8 text-white">Learn more about my background and skills.</p>
+                </div>
+            </section>
+    
+            <section id="contact-en">
+                <div class="contact-container">
+                    <h2 class="custom-contact"><a href="contact.html">I’d Love to Hear From You !</a></h2>
+                    <p class="mt-8 text-white">If you have any questions, feel free to contact me here.</p>
+                </div>
+            </section>
+        </div>
+            
+        <div class="content ja" style="display: none;">
+            <section class="hero-section">
+                <div class="hero-overlay">
+                    <h2 class="font-bold">Welcome<br> to<br> My<br> Portfolio</h2>                    
+                </div>
+            </section>
+            
+            <section id="projects-ja">
+                <h2 class="text-4xl font-bold text-center">Projects</h2>
+                <div class="project-gallery">
+                    <div class="project-category">
+                        <h2 class="font-bold text-center">フロントエンド</h2>
+                        <div class="project-items-container">
+                            <div class="project-item">
+                                <img src="../dist/images/background-index.jpg" alt="Project 2" class="project-image">
+                            </div>
+                            <!-- 追加のプロジェクト -->
+                        </div>
+                    </div>
+                    <div class="project-category mt-8">
+                        <h2 class="font-bold text-center">バックエンド</h2>
+                        <div class="project-items-container">
+                            <div class="project-item">
+                                <img src="../dist/images/mytrip-logo.png" alt="Project 1" class="project-image">
+                            </div>
+                            <!-- 追加のプロジェクト -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="projects.html" class="text-white hover:underline ">詳細はこちら</a>    
+                </div>
+            </section>
+
+            <section id="about-ja">
+                <div class="about-container">
+                    <h2 class="custom-about"><a href="about.html"> Who Am I ? </a></h2> 
+                    <p class="mt-8 text-white">Learn more about my background and skills.</p>
+                </div>
+            </section>
+    
+            <section id="contact-ja">
+                <div class="contact-container">
+                    <h2 class="custom-contact"><a href="contact.html">I’d Love to Hear From You !</a></h2>
+                    <p class="mt-8 text-white">If you have any questions, feel free to contact me here.</p>
+                </div>
+            </section>
+
+        </div>
+        
+    </main>
+    
+    <footer class="p-4">
+        <p>&copy; 2024 SHO MAEKAWA</p>
+    </footer>
+    <script src="../dist/js/scripts.js"></script>
+</body>
+</html>
