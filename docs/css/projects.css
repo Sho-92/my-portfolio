@@ -23,7 +23,7 @@ main {
 .project-gallery-wrapper {
   position: relative; /* 相対位置を指定 */
   border: 15px solid #ccc; /* 枠線の色と太さを設定 */
-  padding: 50px; /* コンテンツとの余白 */
+  padding: 10px; /* コンテンツとの余白 */
   margin-top: 40px; /* 他の要素との間隔 */
   max-width: 1000px; /* ラッパー全体の幅を固定 */
   width: 100%;
@@ -32,12 +32,12 @@ main {
 }
 
 .project-gallery-wrapper h2 {
-  position: absolute; /* 絶対位置を指定 */
-  top: 6px; /* 上に少し移動 */
-  left: -3px; /* 左に少し移動 */
-  padding-right: 10px; /* 背景とテキストの調整 */
+  text-align: center; /* テキストを中央揃え */
+  margin: 10px 0; /* 上下のマージンをリセット */
+  position: relative; /* 絶対位置を使用せず、相対位置を指定 */
+  top: 0px; /* 必要であれば、位置を微調整 */
   background-color: inherit; /* 背景色を透明に設定 */
-  color: #2d3748;
+  color: #2d3748; /* テキストの色を設定 */
 }
 
 .project-gallery {
@@ -47,6 +47,12 @@ main {
   justify-content: center; /* 垂直方向の中央配置 */
   gap: 1rem; /* カテゴリー間の間隔 */
   width: 100%; /* ギャラリーの全幅を使用 */
+}
+
+.project-item h3 {
+  color: #2d3748;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .project-item {
@@ -59,6 +65,7 @@ main {
   text-align: center;
   max-width: 850px; /* アイテムの最大幅を固定 */
   width: 100%;
+  background: linear-gradient(135deg, #a0a0a0, #9e9e9e);
   border-radius: 8px; /* 角を丸める */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す（オプション） */
 }
@@ -69,13 +76,12 @@ main {
   height: auto; /* 高さを自動調整 */
   max-height: 100%; /* 最大高さを設定 */
   object-fit: cover; /* アスペクト比を保ちながら切り抜く */
-  margin-bottom: 0.5rem; /* テキストとの間隔を追加（オプション） */
   border: 2px solid #ccc; /* 枠線の色と太さを指定 */
   padding: 0.5rem; /* 内側の余白を追加 */
   border-radius: 8px; /* 角を丸める（オプション） */
   background-color: rgba(0, 0, 0, 0.1); /* 背景色を追加（オプション） */
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  margin: 0 0 2rem 0;
+  margin: 0 0 1rem 0;
 }
 
 /* モーダルの背景 */
@@ -176,13 +182,37 @@ main {
     font-size: 1rem; /* 基本フォントサイズ */
   }
 
+  .project-category-page h2:first-letter {
+    font-size: 2em;
+  }
+  
   .project-gallery-wrapper {
     position: relative; /* 相対位置を指定 */
     border: 15px solid #ccc; /* 枠線の色と太さを設定 */
     padding: 10px; /* コンテンツとの余白 */
+    margin-top: 40px; /* 他の要素との間隔 */
+    max-width: 1000px; /* ラッパー全体の幅を固定 */
     width: 100%;
     margin-left: auto;
     margin-right: auto; /* 左右のマージンを自動に設定して中央寄せ */
+  }
+  
+  .project-gallery-wrapper h2 {
+    text-align: center; /* テキストを中央揃え */
+    margin: 0; /* 上下のマージンをリセット */
+    position: relative; /* 絶対位置を使用せず、相対位置を指定 */
+    top: 0px; /* 必要であれば、位置を微調整 */
+    background-color: inherit; /* 背景色を透明に設定 */
+    color: #2d3748; /* テキストの色を設定 */
+  }
+  
+  .project-gallery {
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 水平方向の中央配置 */
+    justify-content: center; /* 垂直方向の中央配置 */
+    gap: 1rem; /* カテゴリー間の間隔 */
+    width: 100%; /* ギャラリーの全幅を使用 */
   }
   
   .project-item {
@@ -191,14 +221,21 @@ main {
     align-items: center; /* 水平方向の中央配置 */
     justify-content: center; /* 垂直方向の中央配置 */
     border: 2px solid #ccc;
-    margin-top: 50px;
+    margin-top: 10px;
     padding: 1.5rem;
     text-align: center;
     width: 100%;
+    background: linear-gradient(135deg, #a0a0a0, #9e9e9e);
     border-radius: 8px; /* 角を丸める */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す（オプション） */
   }
   
+  .project-item h3 {
+    color: #2d3748;
+    font-weight: bold;
+    font-size: 30px;  
+  }
+
   .modal {
     display: none;
     position: fixed;

@@ -6,6 +6,12 @@ main {
   margin-bottom: 1rem; /* 見出しの下部余白 */
 }
 
+.bg-contact {
+  background: url('../images/bg-contact.jpg') no-repeat center center/cover; /* 背景画像を設定 */
+  background-attachment: fixed; /* スクロール時に背景が固定される */
+  background-size: cover; /* 画像をカバーさせる */
+
+}
 
 .wrapper{ 
   position: fixed;

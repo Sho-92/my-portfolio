@@ -41,7 +41,7 @@ main {
   border: 2px solid #ccc;
   padding: 1rem;
   border-radius: 8px; /* 角を丸める */
-  background-color: rgba(204, 204, 204, 0.1); /* 背景色を追加（オプション） */
+  background: linear-gradient(135deg, #a0a0a0, #9e9e9e);
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); 
 }
 
@@ -107,6 +107,7 @@ main {
   margin: 0 auto; /* 自動で左右マージンを設定 */
   margin-bottom: 20px; /* 下に20pxのスペースを追加 */
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); 
+  background: linear-gradient(135deg, #a0a0a0, #9e9e9e);
 
 }
 
