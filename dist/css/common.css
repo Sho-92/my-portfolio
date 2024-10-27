@@ -310,13 +310,13 @@ p {
   }
 
   /* 開いた状態のスタイル */
-  .nav-list.open {
+  .nav-list.nav-open {
     display: flex; /* 表示状態に */
     animation: slideIn 1.0s forwards; /* スライドインアニメーション */
   }
 
   /* 閉じた状態のスタイル */
-  .nav-list.close {
+  .nav-list.nav-close {
     animation: slideOut 1.0s forwards; /* スライドアウトアニメーション */
   }
 

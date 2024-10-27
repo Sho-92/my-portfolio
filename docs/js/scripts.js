@@ -5,34 +5,38 @@ const navList = document.querySelector('.nav-list');
 
 menuToggle.addEventListener('change', function () {
     if (this.checked) {
-        navList.classList.remove('close'); // フェードアウトクラスを削除
-        navList.classList.add('open'); // フェードインクラスを追加
         navList.style.display = 'flex'; // 表示状態にする
+        navList.classList.remove('nav-close'); // フェードアウトクラスを削除
+        navList.classList.add('nav-open'); // フェードインクラスを追加
     } else {
-        navList.classList.remove('open'); // フェードインクラスを削除
-        navList.classList.add('close'); // フェードアウトクラスを追加
-        setTimeout(() => {
+        navList.classList.remove('nav-open'); // フェードインクラスを削除
+        navList.classList.add('nav-close'); // フェードアウトクラスを追加
+        // アニメーションの終了を待ってから非表示にする
+        navList.addEventListener('animationend', function handleAnimationEnd() {
             navList.style.display = 'none'; // アニメーション後に非表示にする
-        }, 1000); // アニメーションの時間に合わせて調整
+            navList.classList.remove('nav-close'); // クラスをリセット
+            navList.removeEventListener('animationend', handleAnimationEnd); // イベントリスナーを削除
+        });
     }
 });
 
 // 言語選択をした際に、ナビゲーションを閉じる。
 function closeNavList() {
-  // 現在の画面幅を取得
-  const screenWidth = window.innerWidth;
+    const screenWidth = window.innerWidth; // 現在の画面幅を取得
 
-  // スマートフォンサイズ（768px以下）の場合のみ実行
-  if (screenWidth <= 768) {
-      menuToggle.checked = false; // トグルをオフにする
-      navList.classList.remove('open'); // フェードインクラスを削除
-      navList.classList.add('close'); // フェードアウトクラスを追加
-      setTimeout(() => {
-          navList.style.display = 'none'; // アニメーション後に非表示にする
-      }, 1000); // アニメーションの時間に合わせて調整
-  }
+    // スマートフォンサイズ（768px以下）の場合のみ実行
+    if (screenWidth <= 768) {
+        menuToggle.checked = false; // トグルをオフにする
+        navList.classList.remove('nav-open'); // フェードインクラスを削除
+        navList.classList.add('nav-close'); // フェードアウトクラスを追加
+        // アニメーションの終了を待ってから非表示にする
+        navList.addEventListener('animationend', function handleAnimationEnd() {
+            navList.style.display = 'none'; // アニメーション後に非表示にする
+            navList.classList.remove('nav-close'); // クラスをリセット
+            navList.removeEventListener('animationend', handleAnimationEnd); // イベントリスナーを削除
+        });
+    }
 }
-
 
 function switchLanguage(lang) {
     // すべての言語のコンテンツを非表示にする
@@ -82,6 +86,11 @@ function switchTab(tab) {
 // ページが読み込まれたときに現在のタブを表示
 window.addEventListener('DOMContentLoaded', () => {
     switchTab(currentTab); // 最初にタブを表示
+
+    // 初回の監視設定をここで行う
+    document.querySelectorAll('.project-category, .custom-about, .custom-contact').forEach((element) => {
+        observer.observe(element); // どちらの要素も監視
+    });
 });
 
 // フェードインアニメーション //
@@ -98,13 +107,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.8 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    // 初回の監視設定をここで行う
-    document.querySelectorAll('.project-category, .custom-about, .custom-contact').forEach((element) => {
-        observer.observe(element); // どちらの要素も監視
-    });
-});
-
 // about me //
 function toggleContent(element) {
     const content = element.nextElementSibling;
@@ -112,39 +114,35 @@ function toggleContent(element) {
     element.textContent = content.classList.contains('show') ? 'Show Less' : 'Learn More';
 }
 
-
-
 // モーダルを取得
 const modal = document.getElementById('videoModal');
 const modalVideo = document.getElementById('modalVideo');
-const closeModal = document.querySelector('.close');
+const closeModal = document.querySelector('.modal-close');
 
 // モーダルを開くリンク（動画サムネイル）を取得
 const openModalLinks = document.querySelectorAll('.open-modal');
 
 // 各リンクにクリックイベントを追加
 openModalLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const videoSrc = link.getAttribute('data-video-src'); // data属性から動画のパスを取得
-    modalVideo.querySelector('source').src = videoSrc; // 動画のソースを設定
-    modalVideo.load(); // 動画を再読み込み
-    modal.style.display = 'flex'; // モーダルを表示
-  });
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const videoSrc = link.getAttribute('data-video-src'); // data属性から動画のパスを取得
+        modalVideo.querySelector('source').src = videoSrc; // 動画のソースを設定
+        modalVideo.load(); // 動画を再読み込み
+        modal.style.display = 'flex'; // モーダルを表示
+    });
 });
 
 // モーダルを閉じる
 closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-  modalVideo.querySelector('source').src = ''; // モーダルを閉じたら動画のソースをクリア
+    modal.style.display = 'none';
+    modalVideo.querySelector('source').src = ''; // モーダルを閉じたら動画のソースをクリア
 });
 
 // モーダルの外側をクリックしたときも閉じる
 window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    modalVideo.querySelector('source').src = ''; // モーダルを閉じたら動画のソースをクリア
-  }
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        modalVideo.querySelector('source').src = ''; // モーダルを閉じたら動画のソースをクリア
+    }
 });
-
-
