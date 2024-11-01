@@ -8,190 +8,183 @@ main {
 }
 
 .rounded-image {
-  width: 300px; /* 好みのサイズに設定 */
-  height: 300px; /* 好みのサイズに設定 */
-  object-fit: cover; /* アスペクト比を保ちながら切り抜く */
-  border-radius: 100%; /* 円形にする */
+  width: 300px; 
+  height: 300px; 
+  object-fit: cover; 
+  border-radius: 100%;
 }
 
 .about-profile-parent {
-  display: flex; /* 横並びに配置 */
-  justify-content: space-between; /* 子要素間のスペースを確保 */
-  align-items: flex-start; /* 上部を揃える */
-  gap: 0.5rem; /* 子要素間のスペースを調整 */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 0.5rem; 
 }
 
 .about-profile {
-  width: 40%; /* 幅を40%に設定 */
+  width: 40%; 
   margin-left: 30px;
   margin-top: 100px;
   text-align: center;
-  display: flex; /* フレックスボックスを使用 */
-  flex-direction: column; /* 縦方向に並べる */
-  align-items: center; /* 子要素を中央揃え */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .skills {
-  width: 50%; /* 幅を50%に設定 */
-  margin-right: 30px; /* 右側に20pxのスペースを追加 */
+  width: 50%; 
+  margin-right: 30px; 
   text-align: center;
-  display: flex; /* フレックスボックスを使用 */
-  flex-direction: column; /* 縦方向に並べる */
-  align-items: center; /* 横方向中央揃え */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
   border: 2px solid #ccc;
   padding: 1rem;
-  border-radius: 8px; /* 角を丸める */
+  border-radius: 8px; 
   background: linear-gradient(135deg, #a0a0a0, #9e9e9e);
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); 
 }
 
 .skills h2.underline {
-  display: inline-block; /* 下線をテキストの幅に合わせる */
-  border-bottom: 2px solid #fff; /* 下線の色と太さを設定 */
-  padding-bottom: 1px; /* テキストと下線の間に余白を追加 */
+  display: inline-block; 
+  border-bottom: 2px solid #fff; 
+  padding-bottom: 1px; 
   margin-bottom: 5px;
 }
 
 .skills-category {
   text-align: left;
-  width: 100%; /* 可能な限り幅を広げる */
+  width: 100%; 
 }
 
 .skills-category h3 {
-  margin-top: 0.5rem; /* 各見出しの上にスペースを追加 */
-  margin-bottom: 0.5rem; /* 各見出しの下にスペースを追加 */
-  color: #2d3748; /* 見出しの色 */
-  position: relative; /* 下線のために必要 */
-  display: inline-block; /* インラインブロックに変更 */
+  margin-top: 0.5rem; 
+  margin-bottom: 0.5rem; 
+  color: #2d3748; 
+  position: relative; 
+  display: inline-block; 
 }
 
 .skills-category h3::after {
-  content: ''; /* 擬似要素を使用 */
-  display: block; /* ブロック表示 */
-  width: 100%; /* 下線の幅 */
-  height: 3px; /* 下線の高さ */
-  background-color: #2d3748; /* 下線の色 */
-  margin-top: 1px; /* 下線と見出しの間のスペース */
-  border-radius: 2px; /* 角を丸める */
+  content: ''; 
+  display: block; 
+  width: 100%; 
+  height: 3px; 
+  background-color: #2d3748; 
+  margin-top: 1px; 
+  border-radius: 2px; 
 }
 
 .skills-category ul {
-  list-style: none; /* デフォルトのリストスタイルを消去 */
-  padding-left: 0; /* 左側の余白を消去 */
+  list-style: none; 
+  padding-left: 0; 
 }
 
 .skills-category ul li {
-  background-color: rgba(255, 255, 255, 0.5); /* 薄いグレー */
-  border-radius: 4px; /* 角を丸める */
-  padding: 5px; /* 内側の余白 */
-  margin: 5px 0; /* 各リスト項目の間にスペースを追加 */
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 4px; 
+  padding: 5px; 
+  margin: 5px 0; 
 }
-
-
-
-
 
 .about-container-parent {
   display: flex;
-  justify-content: center; /* 水平方向に中央揃え */
+  justify-content: center; 
 }
 
 .about-container {
   max-width: 1200px;
-  width: 100%; /* 好みのサイズに設定 */
-  height: auto; /* 自動調整 */
-  border: 3px solid #ccc; /* 枠線の色と太さを指定 */
-  padding: 1.0rem; /* 右側に50pxのパディングを追加 skillsと同じ幅*/
-  border-radius: 8px; /* 角を丸める（オプション） */
-  background-color: rgba(204, 204, 204, 0.1); /* 背景色を追加（オプション） */
-  margin: 0 auto; /* 自動で左右マージンを設定 */
-  margin-bottom: 20px; /* 下に20pxのスペースを追加 */
+  width: 100%; 
+  height: auto; 
+  border: 3px solid #ccc; 
+  padding: 1.0rem; 
+  border-radius: 8px; 
+  background-color: rgba(204, 204, 204, 0.1); 
+  margin: 0 auto; 
+  margin-bottom: 20px;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); 
   background: linear-gradient(135deg, #a0a0a0, #9e9e9e);
 
 }
 
 .about-container h3 {
-  margin-bottom: 1rem; /* 各見出しの下にスペースを追加 */
-  color: #2d3748; /* 見出しの色 */
-  position: relative; /* 下線のために必要 */
-  display: inline-block; /* インラインブロックに変更 */
+  margin-bottom: 1rem; 
+  color: #2d3748; 
+  position: relative; 
+  display: inline-block; 
 }
 
 .about-container h3::after {
-  content: ''; /* 擬似要素を使用 */
-  display: block; /* ブロック表示 */
-  width: 100%; /* 下線の幅 */
-  height: 3px; /* 下線の高さ */
-  background-color: #2d3748; /* 下線の色 */
-  margin-top: 1px; /* 下線と見出しの間のスペース */
-  border-radius: 2px; /* 角を丸める */
+  content: ''; 
+  display: block; 
+  width: 100%; 
+  height: 3px; 
+  background-color: #2d3748; 
+  margin-top: 1px; 
+  border-radius: 2px;
 }
 
 .about-details {
-  background-color: rgba(255, 255, 255, 0.5); /* 薄いグレー */
-  border-radius: 4px; /* 角を丸める */
-  padding: 10px; /* 内側の余白 */
-  margin-bottom: 30px; /* 各リスト項目の間にスペースを追加 */
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 4px; 
+  padding: 10px; 
+  margin-bottom: 30px; 
   font-size: 20px;
 }
 
 .toggle-content {
-  /* 必要に応じて追加スタイルをここに */
-  padding-top: 1rem; /* 追加の内側の余白を設定（オプション） */
-  border-top: 3px solid #ccc; /* 上部に枠線を追加することもできます */
-  display: none; /* 初期状態で非表示 */
+  padding-top: 1rem; 
+  border-top: 3px solid #ccc; 
+  display: none; /
 }
 
 .toggle-content.show {
-  display: block; /* トグルが開かれた際に表示 */
+  display: block; 
   margin-top: 1rem;
 }
 
-
-
-@media screen and (max-width: 768px) { /* スマートフォン用スタイル */
+@media screen and (max-width: 768px) { 
   body {
-    font-size: 1rem; /* 基本フォントサイズ */
+    font-size: 1rem; 
   }
 
   .about-profile-parent {
-    display: flex; /* フレックスボックスを使用 */
-    flex-direction: column; /* 縦方向に並べる */
-    align-items: center; /* 子要素を中央揃え */
+    display: flex; /
+    flex-direction: column; 
+    align-items: center;
     text-align: center;
     margin-top: 30px;
   }
   
   .about-profile {
-    width: 100%; /* 幅を40%に設定 */
+    width: 100%; 
     margin: 0;
     text-align: center;
-    display: flex; /* フレックスボックスを使用 */
-    flex-direction: column; /* 縦方向に並べる */
-    align-items: center; /* 子要素を中央揃え */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
   }
   
   .skills {
-    width: 100%; /* 幅を50%に設定 */
+    width: 100%; 
     margin: 0;
-    display: flex; /* フレックスボックスを使用 */
-    flex-direction: column; /* 縦方向に並べる */
-    align-items: center; /* 横方向中央揃え */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
     border: 2px solid #ccc;
     padding: 1rem;
-    border-radius: 8px; /* 角を丸める */
-    background-color: rgba(204, 204, 204, 0.1); /* 背景色を追加（オプション） */
+    border-radius: 8px; 
+    background-color: rgba(204, 204, 204, 0.1); 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); 
   }
 
   .about-container h3 {
     font-size: 1.3rem;
-    margin-bottom: 1rem; /* 各見出しの下にスペースを追加 */
-    color: #2d3748; /* 見出しの色 */
-    position: relative; /* 下線のために必要 */
-    display: inline-block; /* インラインブロックに変更 */
+    margin-bottom: 1rem; 
+    color: #2d3748; 
+    position: relative; 
+    display: inline-block; 
   }
   
   
