@@ -135,7 +135,7 @@ main {
 .toggle-content {
   padding-top: 1rem; 
   border-top: 3px solid #ccc; 
-  display: none; /
+  display: none; 
 }
 
 .toggle-content.show {
@@ -149,7 +149,7 @@ main {
   }
 
   .about-profile-parent {
-    display: flex; /
+    display: flex; 
     flex-direction: column; 
     align-items: center;
     text-align: center;
